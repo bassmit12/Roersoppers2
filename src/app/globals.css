@@ -3,13 +3,34 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+
+  /* Water Theme Colors */
+  --primary-blue: #1e40af;
+  --light-blue: #3b82f6;
+  --aqua: #06b6d4;
+  --teal: #0d9488;
+  --light-aqua: #67e8f9;
+  --dark-blue: #1e3a8a;
+  --text-dark: #1f2937;
+  --text-light: #6b7280;
+  --light-gray: #f8fafc;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  /* Water Theme Custom Colors */
+  --color-primary-blue: var(--primary-blue);
+  --color-light-blue: var(--light-blue);
+  --color-aqua: var(--aqua);
+  --color-teal: var(--teal);
+  --color-light-aqua: var(--light-aqua);
+  --color-dark-blue: var(--dark-blue);
+  --color-text-dark: var(--text-dark);
+  --color-text-light: var(--text-light);
+  --color-light-gray: var(--light-gray);
+  --font-sans: var(--font-poppins), system-ui, sans-serif;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,4 +44,119 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Water Animation Keyframes */
+@keyframes wave {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  25% {
+    transform: translateX(-25px) translateY(-5px);
+  }
+  50% {
+    transform: translateX(-50px) translateY(0);
+  }
+  75% {
+    transform: translateX(-25px) translateY(5px);
+  }
+  100% {
+    transform: translateX(0) translateY(0);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes shimmer {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+@keyframes wave-flow {
+  0% {
+    transform: translateX(0) scaleY(1);
+  }
+  50% {
+    transform: translateX(-50px) scaleY(1.1);
+  }
+  100% {
+    transform: translateX(-100px) scaleY(1);
+  }
+}
+
+/* Utility Classes */
+.animate-wave {
+  animation: wave 8s ease-in-out infinite;
+}
+
+.animate-wave-flow {
+  animation: wave-flow 15s linear infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background-size: 200% 200%;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+.water-gradient {
+  background: linear-gradient(
+    135deg,
+    var(--aqua),
+    var(--light-blue),
+    var(--teal)
+  );
+}
+
+.text-gradient {
+  background: linear-gradient(45deg, var(--light-aqua), var(--primary-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Smooth transitions */
+* {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--light-gray);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--aqua);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--teal);
 }

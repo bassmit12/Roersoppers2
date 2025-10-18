@@ -13,23 +13,28 @@ type NavigationItem = {
 };
 
 const navigation: NavigationItem[] = [
-  { 
-    name: "Home", 
+  {
+    name: "Home",
     href: "/",
     dropdown: [
-      { name: "Over Ons", href: "#about" },
-      { name: "Zwemgroepen", href: "#swim-groups" },
-      { name: "Team", href: "#team" },
-      { name: "Evenementen", href: "#events" },
-      { name: "Contact", href: "#contact" },
-    ]
+      { name: "Over Ons", href: "/#about" },
+      { name: "Zwemgroepen", href: "/#swim-groups" },
+      { name: "Team", href: "/#team" },
+      { name: "Evenementen", href: "/#events" },
+      { name: "Contact", href: "/#contact" },
+    ],
   },
-  { 
-    name: "Zwemmen", 
+  {
+    name: "Zwemmen",
     href: "#",
     dropdown: [
+      { name: "Zwemgroepen", href: "/zwemgroepen" },
       { name: "Trainingsschema", href: "/trainingsschema" },
-    ]
+    ],
+  },
+  {
+    name: "Informatie",
+    href: "/informatie",
   },
 ];
 
@@ -68,7 +73,10 @@ export function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
+          <Link
+            href="/"
+            className="flex items-center space-x-2 hover:opacity-80 transition-opacity duration-300"
+          >
             <Image
               src="/images/logo.png"
               alt="De Roersoppers"
@@ -82,7 +90,7 @@ export function Navigation() {
             >
               De Roersoppers
             </span>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">

@@ -118,10 +118,10 @@ export function Hero() {
                   transition={{ delay: 0.3, duration: 0.8 }}
                   className="text-4xl sm:text-5xl lg:text-7xl font-black leading-tight drop-shadow-lg"
                 >
-                  <span className="text-white">Duik in het</span>
+                  <span className="text-white">Zwemmen met</span>
                   <br />
                   <span className="bg-gradient-to-r from-cyan-400 via-blue-300 to-teal-300 bg-clip-text text-transparent">
-                    Avontuur
+                    Passie
                   </span>
                 </motion.h1>
               </div>
@@ -133,11 +133,11 @@ export function Hero() {
                 transition={{ delay: 0.6 }}
                 className="text-base sm:text-xl text-white/90 leading-relaxed max-w-lg drop-shadow-md mx-auto lg:mx-0"
               >
-                Bij{" "}
+                Duik in het water bij{" "}
                 <span className="font-bold text-cyan-300">De Roersoppers</span>{" "}
-                draait alles om plezier, vooruitgang en teamgeest. Van je eerste
-                zwemslag tot medaille-winnende prestaties - wij ondersteunen
-                jouw zwemreis!
+                Een bruisende zwemvereniging waar techniek, uitdaging en plezier
+                samenkomen. Met een enthousiast team en fijne sfeer kan elke
+                zwemmer groeien en genieten – recreatief of in competitie.
               </motion.p>
 
               {/* Features list */}

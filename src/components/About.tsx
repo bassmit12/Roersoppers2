@@ -126,7 +126,7 @@ export function About() {
             <div className="relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
               <div className="aspect-[4/3] relative">
                 <Image
-                  src="/images/training.jpg"
+                  src="/images/trainingInActie2.jpg"
                   alt="Training bij De Roersoppers"
                   fill
                   className="object-cover"
@@ -135,10 +135,10 @@ export function About() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 text-white">
                   <h3 className="text-xl sm:text-2xl font-semibold mb-1 sm:mb-2">
-                    Training in Actie
+                    Lesgeven
                   </h3>
                   <p className="text-sm sm:text-base text-white/90">
-                    De Roersoppers aan het werk
+                    Koen geeft les aan onze jongste zwemmers
                   </p>
                 </div>
               </div>

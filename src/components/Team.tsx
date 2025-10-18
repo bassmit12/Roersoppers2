@@ -97,11 +97,11 @@ function TeamCard({ member, index }: { member: TeamMember; index: number }) {
     >
       {/* Header with Icon/Photo */}
       <div
-        className={`relative p-8 bg-gradient-to-r ${member.color} text-white`}
+        className={`relative p-6 sm:p-8 bg-gradient-to-r ${member.color} text-white`}
       >
         {member.image ? (
-          <div className="flex flex-col items-center mb-4">
-            <div className="relative w-20 h-20 rounded-full overflow-hidden mb-3 border-4 border-white/30">
+          <div className="flex flex-col items-center mb-3 sm:mb-4">
+            <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-full overflow-hidden mb-2 sm:mb-3 border-4 border-white/30">
               <Image
                 src={member.image}
                 alt={member.name}
@@ -110,28 +110,34 @@ function TeamCard({ member, index }: { member: TeamMember; index: number }) {
                 sizes="80px"
               />
             </div>
-            <member.icon className="w-6 h-6 opacity-80" />
+            <member.icon className="w-5 h-5 sm:w-6 sm:h-6 opacity-80" />
           </div>
         ) : (
-          <div className="flex items-center justify-between mb-4">
-            <div className="text-4xl">{member.emoji}</div>
-            <member.icon className="w-8 h-8 opacity-80" />
+          <div className="flex items-center justify-between mb-3 sm:mb-4">
+            <div className="text-3xl sm:text-4xl">{member.emoji}</div>
+            <member.icon className="w-6 h-6 sm:w-8 sm:h-8 opacity-80" />
           </div>
         )}
-        <h3 className="text-xl font-bold mb-1 text-center">{member.name}</h3>
-        <p className="text-white/90 font-medium text-center">{member.role}</p>
+        <h3 className="text-lg sm:text-xl font-bold mb-1 text-center">
+          {member.name}
+        </h3>
+        <p className="text-white/90 font-medium text-center text-sm sm:text-base">
+          {member.role}
+        </p>
       </div>
 
       {/* Content */}
-      <div className="p-6">
-        <div className="mb-4">
-          <div className="inline-flex items-center px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-3">
-            <Trophy className="w-4 h-4 mr-2" />
+      <div className="p-5 sm:p-6">
+        <div className="mb-3 sm:mb-4">
+          <div className="inline-flex items-center px-2.5 sm:px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-xs sm:text-sm font-medium mb-2 sm:mb-3">
+            <Trophy className="w-3 h-3 sm:w-4 sm:h-4 mr-1.5 sm:mr-2" />
             {member.achievement}
           </div>
         </div>
 
-        <p className="text-slate-600 leading-relaxed">{member.specialty}</p>
+        <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
+          {member.specialty}
+        </p>
 
         {/* Floating animation elements */}
         <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-white rounded-full shadow-lg flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:animate-bounce">
@@ -163,33 +169,23 @@ export function Team() {
         <div className="absolute bottom-1/4 left-0 w-80 h-80 bg-blue-400/10 rounded-full blur-3xl" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <motion.div
-          className="text-center mb-20"
+          className="text-center mb-12 sm:mb-20"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <motion.div
-            className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-6 py-3 rounded-full text-sm font-medium shadow-lg mb-6"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={isInView ? { opacity: 1, scale: 1 } : {}}
-            transition={{ delay: 0.2 }}
-          >
-            <Users className="w-4 h-4" />
-            <span>Ons Dreamteam</span>
-          </motion.div>
-
-          <h2 className="text-5xl lg:text-6xl font-black mb-6 leading-tight">
-            <span className="text-slate-900">Ontmoet onze</span>
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-4 sm:mb-6 leading-tight">
+            <span className="text-slate-900">Ons</span>
             <br />
             <span className="bg-gradient-to-r from-blue-600 via-cyan-500 to-teal-500 bg-clip-text text-transparent">
-              Zwemfamilie
+              Dreamteam
             </span>
           </h2>
 
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed px-4">
             Van ervaren trainers tot enthousiaste zwemmers - samen maken we van
             <span className="font-bold text-blue-600"> De Roersoppers</span> een
             plek waar iedereen kan groeien! 🏊‍♂️
@@ -197,7 +193,7 @@ export function Team() {
         </motion.div>
 
         {/* Team Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12 sm:mb-16">
           {teamMembers.map((member, index) => (
             <TeamCard key={member.id} member={member} index={index} />
           ))}
@@ -210,20 +206,20 @@ export function Team() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.8 }}
         >
-          <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/40 max-w-2xl mx-auto">
-            <div className="text-4xl mb-4">🎉</div>
-            <h3 className="text-2xl font-bold text-slate-800 mb-4">
+          <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-6 sm:p-8 shadow-xl border border-white/40 max-w-2xl mx-auto">
+            <div className="text-3xl sm:text-4xl mb-3 sm:mb-4">🎉</div>
+            <h3 className="text-xl sm:text-2xl font-bold text-slate-800 mb-3 sm:mb-4">
               Word onderdeel van ons team!
             </h3>
-            <p className="text-lg text-slate-600 mb-6 leading-relaxed">
+            <p className="text-base sm:text-lg text-slate-600 mb-5 sm:mb-6 leading-relaxed px-2">
               Of je nu net begint of al jaren zwemt - bij De Roersoppers is er
               altijd een plek voor jou in onze zwemfamilie!
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-4 bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white rounded-full font-bold shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+              <button className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-500 to-cyan-500 hover:from-blue-600 hover:to-cyan-600 text-white rounded-full font-bold shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-1 text-sm sm:text-base">
                 🏊‍♀️ Word lid!
               </button>
-              <button className="px-8 py-4 border-2 border-blue-500 text-blue-600 hover:bg-blue-50 rounded-full font-bold transition-all duration-300 hover:-translate-y-1">
+              <button className="px-6 sm:px-8 py-3 sm:py-4 border-2 border-blue-500 text-blue-600 hover:bg-blue-50 rounded-full font-bold transition-all duration-300 hover:-translate-y-1 text-sm sm:text-base">
                 💬 Stel een vraag
               </button>
             </div>

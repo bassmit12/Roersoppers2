@@ -1,7 +1,7 @@
 import { Navigation } from "@/components/Navigation";
 import { Hero } from "@/components/Hero";
 import { About } from "@/components/About";
-import { Team } from "@/components/Team";
+import { SwimGroups } from "@/components/SwimGroups";
 import { Events } from "@/components/Events";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
@@ -13,7 +13,7 @@ export default function Home() {
       <main>
         <Hero />
         <About />
-        <Team />
+        <SwimGroups />
         <Events />
         <Contact />
       </main>

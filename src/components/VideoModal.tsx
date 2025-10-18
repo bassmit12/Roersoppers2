@@ -11,7 +11,12 @@ interface VideoModalProps {
   title?: string;
 }
 
-export function VideoModal({ isOpen, onClose, videoSrc, title = "Video" }: VideoModalProps) {
+export function VideoModal({
+  isOpen,
+  onClose,
+  videoSrc,
+  title = "Video",
+}: VideoModalProps) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(false);
@@ -149,7 +154,7 @@ export function VideoModal({ isOpen, onClose, videoSrc, title = "Video" }: Video
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.9, opacity: 0 }}
             transition={{ type: "spring", damping: 25, stiffness: 300 }}
-            className="relative w-full max-w-5xl mx-4 bg-black rounded-2xl overflow-hidden shadow-2xl"
+            className="relative w-full max-w-5xl mx-2 sm:mx-4 bg-black rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl"
             onClick={(e) => e.stopPropagation()}
             onMouseMove={resetControlsTimeout}
             onMouseEnter={() => setShowControls(true)}
@@ -157,9 +162,9 @@ export function VideoModal({ isOpen, onClose, videoSrc, title = "Video" }: Video
             {/* Close Button */}
             <button
               onClick={onClose}
-              className="absolute top-4 right-4 z-10 p-2 bg-black/50 hover:bg-black/70 text-white rounded-full transition-colors"
+              className="absolute top-2 right-2 sm:top-4 sm:right-4 z-10 p-1.5 sm:p-2 bg-black/50 hover:bg-black/70 text-white rounded-full transition-colors"
             >
-              <X className="w-6 h-6" />
+              <X className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
 
             {/* Video */}
@@ -184,29 +189,31 @@ export function VideoModal({ isOpen, onClose, videoSrc, title = "Video" }: Video
                     className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/30"
                   >
                     {/* Title */}
-                    <div className="absolute top-4 left-4 text-white">
-                      <h3 className="text-lg font-semibold">{title}</h3>
+                    <div className="absolute top-2 left-2 sm:top-4 sm:left-4 text-white">
+                      <h3 className="text-sm sm:text-lg font-semibold">
+                        {title}
+                      </h3>
                     </div>
 
                     {/* Play/Pause Button (Center) */}
                     <div className="absolute inset-0 flex items-center justify-center">
                       <button
                         onClick={togglePlayPause}
-                        className="p-4 bg-white/20 hover:bg-white/30 rounded-full backdrop-blur-sm transition-colors"
+                        className="p-3 sm:p-4 bg-white/20 hover:bg-white/30 rounded-full backdrop-blur-sm transition-colors"
                       >
                         {isPlaying ? (
-                          <Pause className="w-12 h-12 text-white" />
+                          <Pause className="w-8 h-8 sm:w-12 sm:h-12 text-white" />
                         ) : (
-                          <Play className="w-12 h-12 text-white ml-1" />
+                          <Play className="w-8 h-8 sm:w-12 sm:h-12 text-white ml-0.5 sm:ml-1" />
                         )}
                       </button>
                     </div>
 
                     {/* Bottom Controls */}
-                    <div className="absolute bottom-0 left-0 right-0 p-4">
+                    <div className="absolute bottom-0 left-0 right-0 p-2 sm:p-4">
                       {/* Progress Bar */}
                       <div
-                        className="w-full h-2 bg-white/30 rounded-full cursor-pointer mb-3"
+                        className="w-full h-1.5 sm:h-2 bg-white/30 rounded-full cursor-pointer mb-2 sm:mb-3"
                         onClick={handleSeek}
                       >
                         <div
@@ -217,30 +224,30 @@ export function VideoModal({ isOpen, onClose, videoSrc, title = "Video" }: Video
 
                       {/* Control Buttons */}
                       <div className="flex items-center justify-between text-white">
-                        <div className="flex items-center space-x-4">
+                        <div className="flex items-center space-x-2 sm:space-x-4">
                           <button
                             onClick={togglePlayPause}
-                            className="p-2 hover:bg-white/20 rounded-full transition-colors"
+                            className="p-1.5 sm:p-2 hover:bg-white/20 rounded-full transition-colors"
                           >
                             {isPlaying ? (
-                              <Pause className="w-5 h-5" />
+                              <Pause className="w-4 h-4 sm:w-5 sm:h-5" />
                             ) : (
-                              <Play className="w-5 h-5" />
+                              <Play className="w-4 h-4 sm:w-5 sm:h-5" />
                             )}
                           </button>
                           <button
                             onClick={toggleMute}
-                            className="p-2 hover:bg-white/20 rounded-full transition-colors"
+                            className="p-1.5 sm:p-2 hover:bg-white/20 rounded-full transition-colors"
                           >
                             {isMuted ? (
-                              <VolumeX className="w-5 h-5" />
+                              <VolumeX className="w-4 h-4 sm:w-5 sm:h-5" />
                             ) : (
-                              <Volume2 className="w-5 h-5" />
+                              <Volume2 className="w-4 h-4 sm:w-5 sm:h-5" />
                             )}
                           </button>
                         </div>
 
-                        <div className="text-sm">
+                        <div className="text-xs sm:text-sm">
                           {formatTime(currentTime)} / {formatTime(duration)}
                         </div>
                       </div>

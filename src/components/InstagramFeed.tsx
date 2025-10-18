@@ -55,25 +55,27 @@ export function InstagramPost({
           src={srcToUse}
           alt={`Instagram post by ${username}`}
           fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           className="object-cover transition-transform duration-300 group-hover:scale-110"
           priority
         />
       </div>
 
-      <div className="p-6">
+      <div className="p-4 sm:p-6">
         {/* Caption only */}
-        <p className="mb-4 text-gray-600">{shortCaption}</p>
+        <p className="mb-3 sm:mb-4 text-sm sm:text-base text-gray-600 line-clamp-3">
+          {shortCaption}
+        </p>
 
         {/* View on Instagram button */}
         <a
           href={postUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center text-blue-600 hover:text-blue-700 transition-colors duration-200"
+          className="inline-flex items-center text-sm sm:text-base text-blue-600 hover:text-blue-700 transition-colors duration-200"
         >
           Bekijk op Instagram
-          <Instagram className="ml-2 h-4 w-4 flex-shrink-0" />
+          <Instagram className="ml-2 h-3 w-3 sm:h-4 sm:w-4 flex-shrink-0" />
         </a>
       </div>
     </article>
@@ -165,11 +167,11 @@ export function InstagramFeed({
 
   if (loading) {
     return (
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-4 sm:gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-3">
         {Array.from({ length: count }).map((_, i) => (
           <div
             key={i}
-            className="rounded-2xl bg-gray-100 shadow-lg h-64 animate-pulse"
+            className="rounded-2xl bg-gray-100 shadow-lg h-48 sm:h-64 animate-pulse"
           />
         ))}
       </div>
@@ -177,13 +179,17 @@ export function InstagramFeed({
   }
 
   if (error && !posts) {
-    return <div className="text-center text-red-500">{error}</div>;
+    return (
+      <div className="text-center text-red-500 text-sm sm:text-base px-4">
+        {error}
+      </div>
+    );
   }
 
   const toRender = posts ?? placeholderPosts.slice(0, count);
 
   return (
-    <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+    <div className="grid gap-4 sm:gap-6 md:gap-8 sm:grid-cols-2 lg:grid-cols-3">
       {toRender.map((post, index) => (
         <InstagramPost key={index} {...post} />
       ))}

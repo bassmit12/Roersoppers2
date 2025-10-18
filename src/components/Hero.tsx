@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { Play, ArrowRight, Star, MapPin, Phone } from "lucide-react";
 import { Button } from "./ui/button";
 import { VideoModal } from "./VideoModal";
@@ -10,8 +10,6 @@ export function Hero() {
   const [isVideoPlaying, setIsVideoPlaying] = useState(true);
   const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const { scrollY } = useScroll();
-  const y = useTransform(scrollY, [0, 500], [0, -150]);
 
   // Set video start time to 54 seconds
   useEffect(() => {
@@ -54,31 +52,24 @@ export function Hero() {
   ];
 
   return (
-    <div className="relative min-h-screen bg-gradient-to-br from-indigo-50 via-white to-cyan-50 overflow-hidden">
-      {/* Geometric Background Patterns */}
+    <div className="relative min-h-screen overflow-hidden">
+      {/* Video Background */}
       <div className="absolute inset-0">
-        <motion.div
-          style={{ y }}
-          className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-blue-400/20 to-cyan-300/20 rounded-full blur-3xl"
-        />
-        <motion.div
-          style={{ y: useTransform(scrollY, [0, 500], [0, 100]) }}
-          className="absolute -bottom-32 -left-32 w-80 h-80 bg-gradient-to-tr from-purple-400/20 to-pink-300/20 rounded-full blur-3xl"
-        />
+        <video
+          className="absolute inset-0 w-full h-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+        >
+          <source src="/video/hero_video2.mp4" type="video/mp4" />
+        </video>
 
-        {/* Swimming lane lines pattern */}
-        <div className="absolute inset-0 opacity-5">
-          {[...Array(6)].map((_, i) => (
-            <motion.div
-              key={i}
-              initial={{ scaleX: 0 }}
-              animate={{ scaleX: 1 }}
-              transition={{ delay: i * 0.1, duration: 1.5 }}
-              className="absolute w-full h-1 bg-blue-600"
-              style={{ top: `${20 + i * 10}%` }}
-            />
-          ))}
-        </div>
+        {/* Video overlay for better text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-blue-900/40 via-blue-900/30 to-blue-900/50" />
+
+        {/* Additional overlay for depth */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black/20 via-transparent to-black/20" />
       </div>
 
       <div className="relative z-10">
@@ -86,50 +77,50 @@ export function Hero() {
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="absolute top-8 right-8 hidden lg:flex items-center space-x-4 bg-white/80 backdrop-blur-sm rounded-full px-6 py-3 shadow-lg"
+          className="absolute top-4 right-4 md:top-8 md:right-8 hidden sm:flex items-center space-x-2 md:space-x-4 bg-white/80 backdrop-blur-sm rounded-full px-3 md:px-6 py-2 md:py-3 shadow-lg text-xs md:text-sm"
         >
-          <div className="flex items-center space-x-2 text-sm text-blue-700">
-            <MapPin className="w-4 h-4" />
-            <span>Roermond</span>
+          <div className="flex items-center space-x-1 md:space-x-2 text-blue-700">
+            <MapPin className="w-3 h-3 md:w-4 md:h-4" />
+            <span className="hidden md:inline">Roermond</span>
           </div>
-          <div className="flex items-center space-x-2 text-sm text-blue-700">
-            <Phone className="w-4 h-4" />
-            <span>Contact</span>
+          <div className="flex items-center space-x-1 md:space-x-2 text-blue-700">
+            <Phone className="w-3 h-3 md:w-4 md:h-4" />
+            <span className="hidden md:inline">Contact</span>
           </div>
         </motion.div>
 
         {/* Main Hero Content */}
-        <div className="container mx-auto px-6 pt-20 pb-16">
-          <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
+        <div className="container mx-auto px-4 sm:px-6 pt-16 sm:pt-20 pb-12 sm:pb-16">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center min-h-[75vh] sm:min-h-[80vh]">
             {/* Left Column - Text Content */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="space-y-8"
+              className="space-y-8 text-center lg:text-left"
             >
               {/* Badge */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.2 }}
-                className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg"
+                className="inline-flex items-center justify-center space-x-2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium shadow-lg mx-auto lg:mx-0"
               >
-                <Star className="w-4 h-4" />
+                <Star className="w-3 h-3 sm:w-4 sm:h-4" />
                 <span>Roermond&apos;s #1 Zwemvereniging</span>
               </motion.div>
 
               {/* Main Heading */}
-              <div className="space-y-4">
+              <div className="space-y-3 sm:space-y-4">
                 <motion.h1
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3, duration: 0.8 }}
-                  className="text-5xl lg:text-7xl font-black leading-tight"
+                  className="text-4xl sm:text-5xl lg:text-7xl font-black leading-tight drop-shadow-lg"
                 >
-                  <span className="text-slate-900">Duik in het</span>
+                  <span className="text-white">Duik in het</span>
                   <br />
-                  <span className="bg-gradient-to-r from-blue-600 via-cyan-500 to-teal-500 bg-clip-text text-transparent">
+                  <span className="bg-gradient-to-r from-cyan-400 via-blue-300 to-teal-300 bg-clip-text text-transparent">
                     Avontuur
                   </span>
                 </motion.h1>
@@ -140,10 +131,10 @@ export function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6 }}
-                className="text-xl text-slate-600 leading-relaxed max-w-lg"
+                className="text-base sm:text-xl text-white/90 leading-relaxed max-w-lg drop-shadow-md mx-auto lg:mx-0"
               >
                 Bij{" "}
-                <span className="font-bold text-blue-600">De Roersoppers</span>{" "}
+                <span className="font-bold text-cyan-300">De Roersoppers</span>{" "}
                 draait alles om plezier, vooruitgang en teamgeest. Van je eerste
                 zwemslag tot medaille-winnende prestaties - wij ondersteunen
                 jouw zwemreis!
@@ -154,7 +145,7 @@ export function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.7 }}
-                className="space-y-3"
+                className="space-y-2 sm:space-y-3 max-w-lg mx-auto lg:mx-0"
               >
                 {poolFeatures.map((feature, index) => (
                   <motion.div
@@ -162,9 +153,9 @@ export function Hero() {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.8 + index * 0.1 }}
-                    className="flex items-center space-x-3 text-slate-700"
+                    className="flex items-center justify-center lg:justify-start space-x-2 sm:space-x-3 text-sm sm:text-base text-white/90 drop-shadow-md"
                   >
-                    <div className="w-6 h-6 bg-gradient-to-r from-green-400 to-teal-500 rounded-full flex items-center justify-center">
+                    <div className="w-5 h-5 sm:w-6 sm:h-6 bg-gradient-to-r from-green-400 to-teal-500 rounded-full flex items-center justify-center shadow-lg flex-shrink-0">
                       <span className="text-white text-xs">✓</span>
                     </div>
                     <span>{feature}</span>
@@ -177,23 +168,23 @@ export function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1 }}
-                className="flex flex-col sm:flex-row gap-4 pt-4"
+                className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4 items-center justify-center lg:justify-start"
               >
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white px-8 py-4 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 group"
+                  className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 group text-sm sm:text-base"
                 >
                   <span>Start je zwemavontuur</span>
-                  <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
 
                 <Button
                   variant="outline"
                   size="lg"
                   onClick={() => setIsVideoModalOpen(true)}
-                  className="border-2 border-blue-600 text-blue-700 hover:bg-blue-50 px-8 py-4 rounded-xl transition-all duration-300 group"
+                  className="border-2 border-white text-white hover:bg-white/10 backdrop-blur-sm px-6 sm:px-8 py-3 sm:py-4 rounded-xl transition-all duration-300 group text-sm sm:text-base"
                 >
-                  <Play className="w-5 h-5 mr-2 group-hover:scale-110 transition-transform" />
+                  <Play className="w-4 h-4 sm:w-5 sm:h-5 mr-2 group-hover:scale-110 transition-transform" />
                   <span>Bekijk video</span>
                 </Button>
               </motion.div>
@@ -204,7 +195,7 @@ export function Hero() {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
-              className="relative"
+              className="relative hidden lg:block"
             >
               {/* Main video container */}
               <div className="relative rounded-3xl overflow-hidden shadow-2xl">
@@ -271,19 +262,21 @@ export function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 1.5 }}
-          className="absolute left-1/2 transform -translate-x-1/2"
+          className="absolute left-1/2 transform -translate-x-1/2 bottom-4 sm:bottom-8 md:bottom-12 lg:bottom-[0px] hidden sm:block"
         >
           <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
-            className="flex flex-col items-center text-blue-600 cursor-pointer"
+            className="flex flex-col items-center text-white cursor-pointer"
           >
-            <span className="text-sm font-medium mb-2">Ontdek meer</span>
-            <div className="w-6 h-10 border-2 border-blue-600 rounded-full flex justify-center">
+            <span className="text-xs sm:text-sm font-medium mb-2 drop-shadow-lg">
+              Ontdek meer
+            </span>
+            <div className="w-5 h-8 sm:w-6 sm:h-10 border-2 border-white rounded-full flex justify-center shadow-lg">
               <motion.div
                 animate={{ y: [0, 12, 0] }}
                 transition={{ duration: 2, repeat: Infinity }}
-                className="w-1 h-3 bg-blue-600 rounded-full mt-2"
+                className="w-1 h-2 sm:h-3 bg-white rounded-full mt-2"
               />
             </div>
           </motion.div>

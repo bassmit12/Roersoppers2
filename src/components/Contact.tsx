@@ -64,60 +64,67 @@ export function Contact() {
   };
 
   return (
-    <section id="contact" ref={ref} className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section
+      id="contact"
+      ref={ref}
+      className="relative py-24 bg-gradient-to-br from-blue-50 via-white to-cyan-50 overflow-hidden"
+    >
+      {/* Background Elements */}
+      <div className="absolute inset-0">
+        <div className="absolute top-1/4 left-0 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 right-0 w-80 h-80 bg-cyan-400/10 rounded-full blur-3xl" />
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <motion.div
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-20"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <h2
-            className="text-4xl font-bold mb-4"
-            style={{ color: "var(--primary-blue)" }}
-          >
-            Neem Contact Op
-            <div className="w-20 h-1 bg-gradient-to-r from-[var(--aqua)] to-[var(--teal)] mx-auto mt-4 rounded-full" />
+          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-4 sm:mb-6 leading-tight">
+            <span className="text-slate-900">Neem</span>
+            <br />
+            <span className="bg-gradient-to-r from-blue-600 via-cyan-500 to-teal-500 bg-clip-text text-transparent">
+              Contact Op
+            </span>
           </h2>
-          <p className="text-xl text-gray-600">Klaar om te duiken?</p>
+
+          <p className="text-base sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed px-4">
+            Klaar om te duiken? Neem contact met ons op en word onderdeel van
+            onze zwemfamilie!
+          </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-16">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-12">
           {/* Contact Information */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h3
-              className="text-2xl font-bold mb-8"
-              style={{ color: "var(--primary-blue)" }}
-            >
-              Contactinformatie
-            </h3>
-
-            <div className="space-y-8">
+            <div className="space-y-5 sm:space-y-6">
               {contactInfo.map((info, index) => (
                 <motion.div
                   key={info.title}
-                  className="flex items-start space-x-4"
+                  className="flex items-start space-x-3 sm:space-x-4 p-4 sm:p-6 bg-white/70 backdrop-blur-sm rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 border border-white/40"
                   initial={{ opacity: 0, y: 20 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
                 >
-                  <div className="flex-shrink-0 p-3 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500 text-white shadow-lg">
+                  <div className="flex-shrink-0 p-2.5 sm:p-3 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-500 text-white shadow-lg">
                     {info.icon}
                   </div>
                   <div>
-                    <h4
-                      className="text-lg font-semibold mb-1"
-                      style={{ color: "var(--primary-blue)" }}
-                    >
+                    <h4 className="text-base sm:text-lg font-semibold mb-1 text-slate-900">
                       {info.title}
                     </h4>
                     {info.details.map((detail, idx) => (
-                      <p key={idx} className="text-gray-600">
+                      <p
+                        key={idx}
+                        className="text-sm sm:text-base text-slate-600"
+                      >
                         {detail}
                       </p>
                     ))}
@@ -128,18 +135,15 @@ export function Contact() {
 
             {/* Additional Info */}
             <motion.div
-              className="mt-12 p-6 bg-gray-50 rounded-2xl"
+              className="mt-6 sm:mt-8 p-4 sm:p-6 bg-white/70 backdrop-blur-sm rounded-2xl shadow-lg border border-white/40"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: 0.8 }}
             >
-              <h4
-                className="text-lg font-semibold mb-3"
-                style={{ color: "var(--primary-blue)" }}
-              >
+              <h4 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3 text-slate-900">
                 Trainingstijden
               </h4>
-              <div className="space-y-2 text-gray-600">
+              <div className="space-y-1.5 sm:space-y-2 text-sm sm:text-base text-slate-600">
                 <p>
                   <strong>Maandag - Vrijdag:</strong> 17:00 - 21:00
                 </p>
@@ -159,17 +163,10 @@ export function Contact() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <div className="bg-gray-50 rounded-2xl p-8">
-              <h3
-                className="text-2xl font-bold mb-6"
-                style={{ color: "var(--primary-blue)" }}
-              >
-                Stuur ons een Bericht
-              </h3>
-
+            <div className="bg-white/70 backdrop-blur-sm rounded-2xl shadow-lg p-6 sm:p-8 border border-white/40">
               {submitted && (
                 <motion.div
-                  className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg"
+                  className="mb-5 sm:mb-6 p-3 sm:p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg text-sm sm:text-base"
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
                 >
@@ -177,11 +174,11 @@ export function Contact() {
                 </motion.div>
               )}
 
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-5 sm:space-y-6">
                 <div>
                   <label
                     htmlFor="name"
-                    className="block text-sm font-semibold text-gray-900 mb-2"
+                    className="block text-sm font-semibold text-slate-900 mb-2"
                   >
                     Je Naam
                   </label>
@@ -192,7 +189,7 @@ export function Contact() {
                     value={formData.name}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--aqua)] focus:border-transparent transition-all duration-300 text-gray-900 placeholder-gray-500"
+                    className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-slate-900 placeholder-slate-400 bg-white text-sm sm:text-base"
                     placeholder="Voer je naam in"
                   />
                 </div>
@@ -200,7 +197,7 @@ export function Contact() {
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-sm font-semibold text-gray-900 mb-2"
+                    className="block text-sm font-semibold text-slate-900 mb-2"
                   >
                     E-mailadres
                   </label>
@@ -211,7 +208,7 @@ export function Contact() {
                     value={formData.email}
                     onChange={handleInputChange}
                     required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--aqua)] focus:border-transparent transition-all duration-300 text-gray-900 placeholder-gray-500"
+                    className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-slate-900 placeholder-slate-400 bg-white text-sm sm:text-base"
                     placeholder="Voer je e-mailadres in"
                   />
                 </div>
@@ -219,7 +216,7 @@ export function Contact() {
                 <div>
                   <label
                     htmlFor="message"
-                    className="block text-sm font-semibold text-gray-900 mb-2"
+                    className="block text-sm font-semibold text-slate-900 mb-2"
                   >
                     Bericht
                   </label>
@@ -230,7 +227,7 @@ export function Contact() {
                     onChange={handleInputChange}
                     required
                     rows={5}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[var(--aqua)] focus:border-transparent transition-all duration-300 resize-none text-gray-900 placeholder-gray-500"
+                    className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 resize-none text-slate-900 placeholder-slate-400 bg-white text-sm sm:text-base"
                     placeholder="Vertel ons over je interesse om lid te worden van ons team..."
                   />
                 </div>
@@ -238,13 +235,13 @@ export function Contact() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full px-8 py-4 rounded-full font-semibold text-white transition-all duration-300 hover:shadow-lg hover:-translate-y-1 water-gradient disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2"
+                  className="w-full px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-white transition-all duration-300 hover:shadow-xl hover:-translate-y-1 bg-gradient-to-r from-blue-600 via-cyan-500 to-teal-500 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center space-x-2 text-sm sm:text-base"
                 >
                   {isSubmitting ? (
-                    <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                    <div className="w-4 h-4 sm:w-5 sm:h-5 border-2 border-white border-t-transparent rounded-full animate-spin" />
                   ) : (
                     <>
-                      <Send className="w-5 h-5" />
+                      <Send className="w-4 h-4 sm:w-5 sm:h-5" />
                       <span>Verstuur Bericht</span>
                     </>
                   )}

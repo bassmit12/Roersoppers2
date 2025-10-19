@@ -34,7 +34,11 @@ const navigation: NavigationItem[] = [
   },
   {
     name: "Informatie",
-    href: "/informatie",
+    href: "#",
+    dropdown: [
+      { name: "Aan / Afmelden", href: "/informatie/aanmelden" },
+      { name: "Code Blauw", href: "/informatie/code-blauw" },
+    ],
   },
 ];
 

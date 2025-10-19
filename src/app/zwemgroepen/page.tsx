@@ -78,7 +78,6 @@ export default function ZwemgroepenPage() {
               <div className="absolute top-1/4 right-0 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl" />
               <div className="absolute bottom-1/4 left-0 w-80 h-80 bg-cyan-400/10 rounded-full blur-3xl" />
             </div>
-
             <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
@@ -101,90 +100,91 @@ export default function ZwemgroepenPage() {
                   Voor elk niveau en elke leeftijd de perfecte zwemgroep
                 </p>
               </motion.div>
-            </div>          </section>
+            </div>{" "}
+          </section>
 
           {/* Swim Groups Section */}
           <section ref={ref} className="relative py-16 px-4 sm:px-6 lg:px-8">
-        {/* Background Elements */}
-        <div className="absolute inset-0">
-          <div className="absolute top-1/4 right-0 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl" />
-          <div className="absolute bottom-1/4 left-0 w-80 h-80 bg-cyan-400/10 rounded-full blur-3xl" />
-        </div>
+            {/* Background Elements */}
+            <div className="absolute inset-0">
+              <div className="absolute top-1/4 right-0 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl" />
+              <div className="absolute bottom-1/4 left-0 w-80 h-80 bg-cyan-400/10 rounded-full blur-3xl" />
+            </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto">
-          <div className="space-y-12 md:space-y-20">
-            {zwemgroepen.map((groep, index) => {
-              return (
-                <motion.div
-                  key={groep.title}
-                  initial={{ opacity: 0, y: 50 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ delay: index * 0.1, duration: 0.6 }}
-                  className={`flex flex-col ${
-                    index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
-                  } gap-8 items-center bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2`}
-                >
-                  {/* Image */}
-                  <div className="w-full lg:w-1/2 h-72 lg:h-[450px] relative overflow-hidden group">
-                    <Image
-                      src={groep.image}
-                      alt={groep.title}
-                      fill
-                      className="object-cover group-hover:scale-110 transition-transform duration-700"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
-
-                    <div className="absolute bottom-6 left-6 right-6">
-                      <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white drop-shadow-2xl mb-2">
-                        {groep.title}
-                      </h2>
-                      <div className="flex items-center gap-2">
-                        <div
-                          className={`h-1.5 w-24 bg-gradient-to-r ${groep.color} rounded-full shadow-lg`}
+            <div className="relative z-10 max-w-7xl mx-auto">
+              <div className="space-y-12 md:space-y-20">
+                {zwemgroepen.map((groep, index) => {
+                  return (
+                    <motion.div
+                      key={groep.title}
+                      initial={{ opacity: 0, y: 50 }}
+                      animate={isInView ? { opacity: 1, y: 0 } : {}}
+                      transition={{ delay: index * 0.1, duration: 0.6 }}
+                      className={`flex flex-col ${
+                        index % 2 === 0 ? "lg:flex-row" : "lg:flex-row-reverse"
+                      } gap-8 items-center bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2`}
+                    >
+                      {/* Image */}
+                      <div className="w-full lg:w-1/2 h-72 lg:h-[450px] relative overflow-hidden group">
+                        <Image
+                          src={groep.image}
+                          alt={groep.title}
+                          fill
+                          className="object-cover group-hover:scale-110 transition-transform duration-700"
                         />
-                      </div>
-                    </div>
-                  </div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
 
-                  {/* Content */}
-                  <div className="w-full lg:w-1/2 p-8 lg:p-12">
-                    <div className="space-y-6">
-                      <div className="space-y-4">
-                        <p className="text-slate-700 leading-relaxed text-base md:text-lg">
-                          {groep.description}
-                        </p>
-                        {groep.details && (
-                          <div className="pt-4 border-t border-slate-200">
-                            <p className="text-slate-700 leading-relaxed text-base md:text-lg">
-                              {groep.details}
-                            </p>
+                        <div className="absolute bottom-6 left-6 right-6">
+                          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white drop-shadow-2xl mb-2">
+                            {groep.title}
+                          </h2>
+                          <div className="flex items-center gap-2">
+                            <div
+                              className={`h-1.5 w-24 bg-gradient-to-r ${groep.color} rounded-full shadow-lg`}
+                            />
                           </div>
-                        )}
+                        </div>
                       </div>
 
-                      {/* Decorative elements */}
-                      <div className="flex items-center gap-2 pt-2">
-                        <div
-                          className={`h-1 w-20 bg-gradient-to-r ${groep.color} rounded-full`}
-                        />
-                        <div
-                          className={`h-1 w-10 bg-gradient-to-r ${groep.color} opacity-50 rounded-full`}
-                        />
-                        <div
-                          className={`h-1 w-5 bg-gradient-to-r ${groep.color} opacity-25 rounded-full`}
-                        />
+                      {/* Content */}
+                      <div className="w-full lg:w-1/2 p-8 lg:p-12">
+                        <div className="space-y-6">
+                          <div className="space-y-4">
+                            <p className="text-slate-700 leading-relaxed text-base md:text-lg">
+                              {groep.description}
+                            </p>
+                            {groep.details && (
+                              <div className="pt-4 border-t border-slate-200">
+                                <p className="text-slate-700 leading-relaxed text-base md:text-lg">
+                                  {groep.details}
+                                </p>
+                              </div>
+                            )}
+                          </div>
+
+                          {/* Decorative elements */}
+                          <div className="flex items-center gap-2 pt-2">
+                            <div
+                              className={`h-1 w-20 bg-gradient-to-r ${groep.color} rounded-full`}
+                            />
+                            <div
+                              className={`h-1 w-10 bg-gradient-to-r ${groep.color} opacity-50 rounded-full`}
+                            />
+                            <div
+                              className={`h-1 w-5 bg-gradient-to-r ${groep.color} opacity-25 rounded-full`}
+                            />
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                  </div>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-      </main>
-    </div>
-    <Footer />
+                    </motion.div>
+                  );
+                })}
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+      <Footer />
     </>
   );
 }

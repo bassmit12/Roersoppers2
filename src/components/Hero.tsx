@@ -1,7 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Play, ArrowRight, Star, MapPin, Phone } from "lucide-react";
+import {
+  Play,
+  ArrowRight,
+  MapPin,
+  Phone,
+  Facebook,
+  Instagram,
+} from "lucide-react";
 import { Button } from "./ui/button";
 import { VideoModal } from "./VideoModal";
 import { useState, useRef, useEffect } from "react";
@@ -42,14 +49,6 @@ export function Hero() {
       setIsVideoPlaying(!isVideoPlaying);
     }
   };
-
-  const poolFeatures = [
-    "🏊‍♂️ Zwembanen voor alle niveaus",
-    "👶 Kinderles vanaf 4 jaar",
-    "🏆 Wedstrijdtraining",
-    "💪 Aqua fitness",
-    "🎉 Gezellige teamactiviteiten",
-  ];
 
   return (
     <div className="relative min-h-screen overflow-hidden">
@@ -99,17 +98,6 @@ export function Hero() {
               transition={{ duration: 0.8 }}
               className="space-y-8 text-center lg:text-left"
             >
-              {/* Badge */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.2 }}
-                className="inline-flex items-center justify-center space-x-2 bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium shadow-lg mx-auto lg:mx-0"
-              >
-                <Star className="w-3 h-3 sm:w-4 sm:h-4" />
-                <span>Roermond&apos;s #1 Zwemvereniging</span>
-              </motion.div>
-
               {/* Main Heading */}
               <div className="space-y-3 sm:space-y-4">
                 <motion.h1
@@ -118,10 +106,12 @@ export function Hero() {
                   transition={{ delay: 0.3, duration: 0.8 }}
                   className="text-4xl sm:text-5xl lg:text-7xl font-black leading-tight drop-shadow-lg"
                 >
-                  <span className="text-white">Zwemmen met</span>
-                  <br />
                   <span className="bg-gradient-to-r from-cyan-400 via-blue-300 to-teal-300 bg-clip-text text-transparent">
-                    Passie
+                    De Roersoppers
+                  </span>
+                  <br />
+                  <span className="text-white text-3xl sm:text-4xl lg:text-5xl">
+                    Zwemmen met passie
                   </span>
                 </motion.h1>
               </div>
@@ -133,35 +123,10 @@ export function Hero() {
                 transition={{ delay: 0.6 }}
                 className="text-base sm:text-xl text-white/90 leading-relaxed max-w-lg drop-shadow-md mx-auto lg:mx-0"
               >
-                Duik in het water bij{" "}
-                <span className="font-bold text-cyan-300">De Roersoppers</span>{" "}
                 Een bruisende zwemvereniging waar techniek, uitdaging en plezier
                 samenkomen. Met een enthousiast team en fijne sfeer kan elke
                 zwemmer groeien en genieten – recreatief of in competitie.
               </motion.p>
-
-              {/* Features list */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.7 }}
-                className="space-y-2 sm:space-y-3 max-w-lg mx-auto lg:mx-0"
-              >
-                {poolFeatures.map((feature, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.8 + index * 0.1 }}
-                    className="flex items-center justify-center lg:justify-start space-x-2 sm:space-x-3 text-sm sm:text-base text-white/90 drop-shadow-md"
-                  >
-                    <div className="w-5 h-5 sm:w-6 sm:h-6 bg-gradient-to-r from-green-400 to-teal-500 rounded-full flex items-center justify-center shadow-lg flex-shrink-0">
-                      <span className="text-white text-xs">✓</span>
-                    </div>
-                    <span>{feature}</span>
-                  </motion.div>
-                ))}
-              </motion.div>
 
               {/* CTA Buttons */}
               <motion.div
@@ -170,23 +135,61 @@ export function Hero() {
                 transition={{ delay: 1 }}
                 className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4 items-center justify-center lg:justify-start"
               >
-                <Button
-                  size="lg"
-                  className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 group text-sm sm:text-base"
-                >
-                  <span>Start je zwemavontuur</span>
-                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                </Button>
+                <a href="/informatie">
+                  <Button
+                    size="lg"
+                    className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 group text-sm sm:text-base"
+                  >
+                    <span>Wordt lid</span>
+                    <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </a>
 
-                <Button
-                  variant="outline"
-                  size="lg"
-                  onClick={() => setIsVideoModalOpen(true)}
-                  className="border-2 border-white text-white hover:bg-white/10 backdrop-blur-sm px-6 sm:px-8 py-3 sm:py-4 rounded-xl transition-all duration-300 group text-sm sm:text-base"
+                <a href="/trainingsschema">
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    className="border-2 border-white text-white hover:bg-white/10 backdrop-blur-sm px-6 sm:px-8 py-3 sm:py-4 rounded-xl transition-all duration-300 text-sm sm:text-base"
+                  >
+                    <span>Trainings Schema</span>
+                  </Button>
+                </a>
+              </motion.div>
+
+              {/* Social Media Links */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.2 }}
+                className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-center justify-center lg:justify-start"
+              >
+                <a
+                  href="https://www.facebook.com/roersoppers"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-white/90 hover:text-white transition-colors drop-shadow-lg group"
                 >
-                  <Play className="w-4 h-4 sm:w-5 sm:h-5 mr-2 group-hover:scale-110 transition-transform" />
-                  <span>Bekijk video</span>
-                </Button>
+                  <div className="w-10 h-10 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110">
+                    <Facebook className="w-5 h-5" />
+                  </div>
+                  <span className="text-sm sm:text-base font-medium">
+                    Volg ons op Facebook
+                  </span>
+                </a>
+
+                <a
+                  href="https://www.instagram.com/roersoppers"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-white/90 hover:text-white transition-colors drop-shadow-lg group"
+                >
+                  <div className="w-10 h-10 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110">
+                    <Instagram className="w-5 h-5" />
+                  </div>
+                  <span className="text-sm sm:text-base font-medium">
+                    Volg ons op Instagram
+                  </span>
+                </a>
               </motion.div>
             </motion.div>
 

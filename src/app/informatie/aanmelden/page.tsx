@@ -75,10 +75,11 @@ export default function AanmeldenPage() {
               <div className="p-6 sm:p-8 lg:p-10 space-y-6">
                 <div className="space-y-4">
                   <p className="text-slate-700 leading-relaxed text-lg">
-                    Nieuwe leden dienen zich via een aanmeldingsformulier (voor de
-                    duur van minimaal één jaar) aan te melden. Aanmelding van
-                    nieuwe leden kan alleen plaatsvinden tegelijk met afgifte van
-                    een machtiging tot incasso voor de verschuldigde contributie.
+                    Nieuwe leden dienen zich via een aanmeldingsformulier (voor
+                    de duur van minimaal één jaar) aan te melden. Aanmelding van
+                    nieuwe leden kan alleen plaatsvinden tegelijk met afgifte
+                    van een machtiging tot incasso voor de verschuldigde
+                    contributie.
                   </p>
 
                   <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl p-6 border-l-4 border-blue-500">
@@ -88,8 +89,9 @@ export default function AanmeldenPage() {
                     </h3>
                     <p className="text-slate-700 leading-relaxed">
                       <strong>Let op:</strong> Betaling van de contributie kan
-                      alleen middels afgifte van een incasso-machtiging. De leden
-                      ontvangen geen voorafgaande melding van de contributie.
+                      alleen middels afgifte van een incasso-machtiging. De
+                      leden ontvangen geen voorafgaande melding van de
+                      contributie.
                     </p>
                   </div>
 
@@ -107,9 +109,9 @@ export default function AanmeldenPage() {
                     Voor minderjarigen
                   </h3>
                   <p className="text-slate-700 leading-relaxed">
-                    Voor leden jonger dan 18 jaar is ondertekening door ouders of
-                    verzorgers verplicht. Dit is onderdeel van onze zorgplicht en
-                    veiligheidsprotocol.
+                    Voor leden jonger dan 18 jaar is ondertekening door ouders
+                    of verzorgers verplicht. Dit is onderdeel van onze
+                    zorgplicht en veiligheidsprotocol.
                   </p>
                 </div>
               </div>
@@ -163,10 +165,10 @@ export default function AanmeldenPage() {
                     Opzegtermijn
                   </h3>
                   <p className="text-slate-700 leading-relaxed text-lg">
-                    Opzegging kan per de eerste van elke maand, mits er één maand
-                    van tevoren schriftelijk wordt opgezegd. Ook na een jaar kan
-                    het lidmaatschap worden opgezegd. Wanneer men het lidmaatschap
-                    niet opzegt, wordt dit met één jaar verlengd.
+                    Opzegging kan per de eerste van elke maand, mits er één
+                    maand van tevoren schriftelijk wordt opgezegd. Ook na een
+                    jaar kan het lidmaatschap worden opgezegd. Wanneer men het
+                    lidmaatschap niet opzegt, wordt dit met één jaar verlengd.
                   </p>
 
                   <div className="bg-amber-50 border-l-4 border-amber-500 rounded-xl p-6">
@@ -176,13 +178,15 @@ export default function AanmeldenPage() {
                     <p className="text-slate-700 leading-relaxed">
                       Bij opzegging in de loop van een kwartaal wordt de
                       contributie tot en met het laatste trainingskwartaal in
-                      rekening gebracht. Het nieuwe seizoen begint per 1 september.
+                      rekening gebracht. Het nieuwe seizoen begint per 1
+                      september.
                     </p>
                   </div>
 
                   <p className="text-slate-700 leading-relaxed text-lg">
                     Zodra het seizoen is aangebroken, loopt het lidmaatschap
-                    automatisch door tot en met 31 augustus van het volgende jaar.
+                    automatisch door tot en met 31 augustus van het volgende
+                    jaar.
                   </p>
                 </div>
               </div>
@@ -218,8 +222,9 @@ export default function AanmeldenPage() {
                       Betalingswijze
                     </h3>
                     <p className="text-slate-700 leading-relaxed">
-                      Betaling geschiedt alleen via automatische incasso. Bij het
-                      aanmelden dient u een incasso-machtiging te verstrekken.
+                      Betaling geschiedt alleen via automatische incasso. Bij
+                      het aanmelden dient u een incasso-machtiging te
+                      verstrekken.
                     </p>
                   </div>
 
@@ -261,7 +266,8 @@ export default function AanmeldenPage() {
                 Vragen over aanmelden of afmelden?
               </h3>
               <p className="text-white/90 text-lg mb-6 max-w-2xl mx-auto">
-                Neem gerust contact op met ons bestuur. We helpen je graag verder!
+                Neem gerust contact op met ons bestuur. We helpen je graag
+                verder!
               </p>
               <a
                 href="mailto:voorzitter@roersoppers.nl"

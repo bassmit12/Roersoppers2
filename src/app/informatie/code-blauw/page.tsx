@@ -113,11 +113,11 @@ export default function CodeBlauwPage() {
                   </h3>
                   <p className="text-slate-700 leading-relaxed mb-4">
                     Onze trainers, vrijwilligers, coaches en officials
-                    onderschrijven de gedragsregels voor begeleiders in de sport,
-                    die zijn vastgesteld door de NOC*NSF. Daarnaast beschikt onze
-                    vereniging over een door justitie afgegeven VOG (Verklaring
-                    Omtrent Gedrag) van de personen die omgaan met minderjarigen
-                    binnen onze vereniging.
+                    onderschrijven de gedragsregels voor begeleiders in de
+                    sport, die zijn vastgesteld door de NOC*NSF. Daarnaast
+                    beschikt onze vereniging over een door justitie afgegeven
+                    VOG (Verklaring Omtrent Gedrag) van de personen die omgaan
+                    met minderjarigen binnen onze vereniging.
                   </p>
                 </div>
 
@@ -127,7 +127,7 @@ export default function CodeBlauwPage() {
                     <Users className="h-7 w-7 text-amber-600" />
                     Vertrouwenscontactpersoon
                   </h3>
-                  
+
                   <div className="space-y-4">
                     <p className="text-slate-700 leading-relaxed">
                       In dit kader heeft onze vereniging tevens een
@@ -137,14 +137,14 @@ export default function CodeBlauwPage() {
                       ongewenst gedrag voor leden, ouders van leden, trainers,
                       vrijwilligers en bestuur.
                     </p>
-                    
+
                     <p className="text-slate-700 leading-relaxed">
                       Verder kan de vertrouwenspersoon doorverwijzen naar andere
-                      instanties zoals bijvoorbeeld maatschappelijk werk, huisarts
-                      of politie. Uiteraard worden hierbij de privacyregels in
-                      acht genomen.
+                      instanties zoals bijvoorbeeld maatschappelijk werk,
+                      huisarts of politie. Uiteraard worden hierbij de
+                      privacyregels in acht genomen.
                     </p>
-                    
+
                     <div className="bg-white rounded-lg p-5 mt-4 border-2 border-amber-200">
                       <p className="text-slate-700 font-semibold text-lg">
                         Momenteel zijn wij op zoek naar een nieuwe
@@ -164,8 +164,8 @@ export default function CodeBlauwPage() {
                 </h3>
                 <p className="text-white/90 text-lg mb-6 max-w-2xl mx-auto">
                   Code Blauw is niet alleen een symbool, het is een belofte aan
-                  alle zwemmers en hun families voor een veilige, respectvolle en
-                  plezierige zwemomgeving.
+                  alle zwemmers en hun families voor een veilige, respectvolle
+                  en plezierige zwemomgeving.
                 </p>
               </div>
             </div>

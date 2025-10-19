@@ -12,21 +12,21 @@ export default function ZwemgroepenPage() {
   const zwemgroepen = [
     {
       title: "Jeugd Wedstrijd",
-      image: "/images/junioren.jpg",
+      image: "/images/Wedstrijd.jpg",
       color: "from-blue-500 to-cyan-500",
       description:
         "Heb jij je A-diploma op zak en wil je verder leren zwemmen? Dan is onze jeugdgroep perfect voor jou! Onze enthousiaste trainers leren je nieuwe zwemtechnieken en helpen je steeds beter te worden. Je zwemt met kinderen van jouw niveau en leeftijd, zodat je altijd goed kunt meedoen. Serieuze trainingen worden afgewisseld met spel en plezier, en wedstrijden zijn precies uitdagend genoeg voor jou!",
     },
     {
       title: "Jeugd Recreatief",
-      image: "/images/training.jpg",
+      image: "/images/jeugd_recreatief2.jpg",
       color: "from-cyan-500 to-teal-500",
       description:
         "Heb jij je A-diploma op zak en wil je vooral plezier beleven in het water? Dan is onze recreatieve jeugdgroep precies wat je zoekt! Onze enthousiaste trainers helpen je om nieuwe zwemtechnieken onder de knie te krijgen, maar richten zich vooral op plezier en samenspel met leeftijdsgenootjes. Je traint op je eigen tempo, zonder de druk van wedstrijden. Wil je toch een keertje ervaren hoe het is om een echte zwemwedstrijd te zwemmen? Dat kan! Maar als je liever gewoon traint en lol maakt, ben je net zo welkom. Bij ons staat genieten van het zwemmen altijd voorop!",
     },
     {
       title: "Jongeren Wedstrijd",
-      image: "/images/Wedstrijd.jpg",
+      image: "/images/jongeren_wedstrijd.avif",
       color: "from-yellow-500 to-orange-500",
       description:
         "Heb jij een passie voor zwemmen en wil je jezelf écht uitdagen? Sluit je dan aan bij dit team, waar je traint op techniek, snelheid en conditie, met als doel deel te nemen aan wedstrijden. Als lid van De Roersoppers vertegenwoordig je ons in de districtscompetitie, kampioenschappen en invitatiewedstrijden.",
@@ -56,7 +56,7 @@ export default function ZwemgroepenPage() {
     },
     {
       title: "Masters 2",
-      image: "/images/senioren.jpg",
+      image: "/images/masters_2.jpg",
       color: "from-rose-500 to-red-500",
       description:
         "Zwemmen is een gezonde sport ook al ben je een jaartje ouder. In deze groep wordt er niet alleen flink gezwommen, maar ook veel gelachen. De banen zijn verdeeld op niveau, zodat iedereen in zijn eigen tempo kan trainen. En ja, de kaakspieren krijgen hier net zo'n goede workout als de arm- en beenspieren – gezelligheid gegarandeerd!",

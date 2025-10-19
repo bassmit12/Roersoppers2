@@ -4,8 +4,6 @@ import { motion } from "framer-motion";
 import {
   Play,
   ArrowRight,
-  MapPin,
-  Phone,
   Facebook,
   Instagram,
 } from "lucide-react";
@@ -72,22 +70,6 @@ export function Hero() {
       </div>
 
       <div className="relative z-10">
-        {/* Navigation hint */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="absolute top-4 right-4 md:top-8 md:right-8 hidden sm:flex items-center space-x-2 md:space-x-4 bg-white/80 backdrop-blur-sm rounded-full px-3 md:px-6 py-2 md:py-3 shadow-lg text-xs md:text-sm"
-        >
-          <div className="flex items-center space-x-1 md:space-x-2 text-blue-700">
-            <MapPin className="w-3 h-3 md:w-4 md:h-4" />
-            <span className="hidden md:inline">Roermond</span>
-          </div>
-          <div className="flex items-center space-x-1 md:space-x-2 text-blue-700">
-            <Phone className="w-3 h-3 md:w-4 md:h-4" />
-            <span className="hidden md:inline">Contact</span>
-          </div>
-        </motion.div>
-
         {/* Main Hero Content */}
         <div className="container mx-auto px-4 sm:px-6 pt-20 sm:pt-24 pb-16 sm:pb-20">
           <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center min-h-[calc(100vh-120px)] sm:min-h-[80vh]">

@@ -1,17 +1,20 @@
 # Mobile Compatibility Improvements
 
 ## Overzicht
+
 De hele website is nu volledig mobile-compatible gemaakt met responsive design verbeteringen voor alle schermformaten.
 
 ## Belangrijkste Verbeteringen
 
-### 1. **Navigation Component** 
+### 1. **Navigation Component**
+
 - ✅ Verbeterde mobile menu met betere max-height (600px ipv 96px)
 - ✅ Scrollbare menu voor kleinere schermen
 - ✅ Smooth transitions tussen open/dicht states
 - ✅ Dropdown menu's werken perfect op mobile
 
 ### 2. **Hero Section**
+
 - ✅ Responsive heading sizes: `text-3xl` (mobile) → `text-5xl` (tablet) → `text-7xl` (desktop)
 - ✅ Betere spacing voor kleine schermen (`space-y-6` op mobile)
 - ✅ Aangepaste padding: `pt-20 sm:pt-24` voor verschillende schermen
@@ -20,33 +23,39 @@ De hele website is nu volledig mobile-compatible gemaakt met responsive design v
 - ✅ Optimale min-height voor verschillende devices
 
 ### 3. **About Section**
+
 - ✅ Responsive grid: 1 kolom (mobile) → 2 kolommen (tablet) → 4 kolommen (desktop)
 - ✅ Aangepaste padding en spacing voor alle breakpoints
 - ✅ Kleinere icons en tekst op mobile
 - ✅ Verbeterde card padding: `p-4` (mobile) → `p-6` (tablet) → `p-8` (desktop)
 
 ### 4. **Swim Groups Section**
+
 - ✅ Single column layout op mobile
 - ✅ Responsive headings met 4 verschillende groottes
 - ✅ Betere spacing tussen secties op kleine schermen
 
 ### 5. **Pool Section**
+
 - ✅ 1 kolom op mobile, 2 kolommen op tablet en groter
 - ✅ Responsive image containers
 - ✅ Aangepaste marges en padding
 
 ### 6. **Events Section**
+
 - ✅ Responsive heading sizes
 - ✅ Betere spacing voor Instagram feed
 - ✅ Mobile-friendly buttons
 
 ### 7. **Contact Section**
+
 - ✅ Single column op mobile, 2 kolommen op desktop
 - ✅ Compact form spacing op mobile
 - ✅ Responsive input fields met kleinere padding op mobile
 - ✅ Betere gap tussen contact cards: `gap-4` (mobile) → `gap-6` (desktop)
 
 ### 8. **Footer**
+
 - ✅ Responsive grid: 1 kolom (mobile) → 2 kolommen (tablet) → 4 kolommen (desktop)
 - ✅ Gecentreerde content op mobile, left-aligned op desktop
 - ✅ Kleinere logo en icons op mobile
@@ -55,11 +64,13 @@ De hele website is nu volledig mobile-compatible gemaakt met responsive design v
 - ✅ Better wrapped links in footer bottom
 
 ### 9. **Zwemgroepen Page**
+
 - ✅ Responsive hero section met aangepaste padding
 - ✅ Betere spacing tussen groep secties op mobile
 - ✅ Responsive image containers
 
 ### 10. **Trainingsschema Page**
+
 - ✅ Calendar view voor desktop (blijft hetzelfde)
 - ✅ List view voor mobile/tablet (al aanwezig)
 - ✅ Responsive padding en spacing
@@ -73,6 +84,7 @@ De hele website is nu volledig mobile-compatible gemaakt met responsive design v
 ## Responsive Patterns
 
 ### Tekst Groottes
+
 ```
 Mobile → Tablet → Desktop
 text-3xl → text-4xl/5xl → text-6xl/7xl (headings)
@@ -80,6 +92,7 @@ text-sm → text-base → text-lg/xl (body)
 ```
 
 ### Spacing
+
 ```
 Mobile → Tablet → Desktop
 gap-4 → gap-6 → gap-8
@@ -88,6 +101,7 @@ py-16 → py-20 → py-24
 ```
 
 ### Grid Layouts
+
 ```
 Mobile → Tablet → Desktop
 grid-cols-1 → grid-cols-2 → grid-cols-3/4
@@ -96,6 +110,7 @@ grid-cols-1 → grid-cols-2 → grid-cols-3/4
 ## Test Aanbevelingen
 
 Test de website op de volgende schermformaten:
+
 - 📱 iPhone SE (375px)
 - 📱 iPhone 12/13/14 (390px)
 - 📱 iPhone 14 Pro Max (430px)
@@ -107,6 +122,7 @@ Test de website op de volgende schermformaten:
 ## Browser Compatibiliteit
 
 De verbeteringen werken in:
+
 - ✅ Chrome (Mobile & Desktop)
 - ✅ Safari (iOS & macOS)
 - ✅ Firefox (Mobile & Desktop)

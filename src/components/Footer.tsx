@@ -87,49 +87,47 @@ export function Footer() {
           <div className="grid grid-cols-2 gap-6 sm:gap-8 md:gap-12 lg:gap-16 w-full max-w-2xl">
             {/* Quick Links */}
             <div className="text-center">
-            <h4 className="text-base sm:text-lg lg:text-xl font-semibold mb-3 sm:mb-4 lg:mb-6 text-[var(--light-aqua)]">
-              Snelle Links
-            </h4>
-            <ul className="space-y-2 sm:space-y-3 text-sm sm:text-base">
-              {navigation.map((item) => (
-                <li key={item.name}>
-                  <Link
-                    href={item.href}
-                    className="text-white/70 hover:text-[var(--light-aqua)] transition-all duration-300 hover:translate-x-1 inline-block"
-                  >
-                    {item.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+              <h4 className="text-base sm:text-lg lg:text-xl font-semibold mb-3 sm:mb-4 lg:mb-6 text-[var(--light-aqua)]">
+                Snelle Links
+              </h4>
+              <ul className="space-y-2 sm:space-y-3 text-sm sm:text-base">
+                {navigation.map((item) => (
+                  <li key={item.name}>
+                    <Link
+                      href={item.href}
+                      className="text-white/70 hover:text-[var(--light-aqua)] transition-all duration-300 hover:translate-x-1 inline-block"
+                    >
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          {/* Contact Info */}
-          <div className="text-center">
-            <h4 className="text-base sm:text-lg lg:text-xl font-semibold mb-3 sm:mb-4 lg:mb-6 text-[var(--light-aqua)]">
-              Contact
-            </h4>
-            <div className="space-y-3 sm:space-y-4 text-white/80 text-sm sm:text-base flex flex-col items-center">
-              <div className="flex items-start space-x-2 sm:space-x-3 group hover:text-white transition-colors duration-300">
-                <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-[var(--light-aqua)] mt-0.5 group-hover:scale-110 transition-transform duration-300 flex-shrink-0" />
-                <div>
-                  <p className="leading-relaxed">
-                    Melick, Limburg
-                  </p>
+            {/* Contact Info */}
+            <div className="text-center">
+              <h4 className="text-base sm:text-lg lg:text-xl font-semibold mb-3 sm:mb-4 lg:mb-6 text-[var(--light-aqua)]">
+                Contact
+              </h4>
+              <div className="space-y-3 sm:space-y-4 text-white/80 text-sm sm:text-base flex flex-col items-center">
+                <div className="flex items-start space-x-2 sm:space-x-3 group hover:text-white transition-colors duration-300">
+                  <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-[var(--light-aqua)] mt-0.5 group-hover:scale-110 transition-transform duration-300 flex-shrink-0" />
+                  <div>
+                    <p className="leading-relaxed">Melick, Limburg</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center space-x-2 sm:space-x-3 group hover:text-white transition-colors duration-300">
+                  <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-[var(--light-aqua)] group-hover:scale-110 transition-transform duration-300 flex-shrink-0" />
+                  <p>0475-533635</p>
+                </div>
+
+                <div className="flex items-center space-x-2 sm:space-x-3 group hover:text-white transition-colors duration-300">
+                  <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-[var(--light-aqua)] group-hover:scale-110 transition-transform duration-300 flex-shrink-0" />
+                  <p className="break-all">info@roersoppers.nl</p>
                 </div>
               </div>
-
-              <div className="flex items-center space-x-2 sm:space-x-3 group hover:text-white transition-colors duration-300">
-                <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-[var(--light-aqua)] group-hover:scale-110 transition-transform duration-300 flex-shrink-0" />
-                <p>0475-533635</p>
-              </div>
-
-              <div className="flex items-center space-x-2 sm:space-x-3 group hover:text-white transition-colors duration-300">
-                <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-[var(--light-aqua)] group-hover:scale-110 transition-transform duration-300 flex-shrink-0" />
-                <p className="break-all">info@roersoppers.nl</p>
-              </div>
             </div>
-          </div>
           </div>
         </div>
 

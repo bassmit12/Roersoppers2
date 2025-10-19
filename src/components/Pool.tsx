@@ -13,7 +13,7 @@ export function Pool() {
     <section
       id="pool"
       ref={ref}
-      className="relative py-24 bg-gradient-to-br from-slate-50 via-blue-50 to-cyan-50 overflow-hidden"
+      className="relative py-16 sm:py-20 md:py-24 bg-gradient-to-br from-slate-50 via-blue-50 to-cyan-50 overflow-hidden"
     >
       {/* Background Elements */}
       <div className="absolute inset-0">
@@ -24,12 +24,12 @@ export function Pool() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <motion.div
-          className="text-center mb-12 sm:mb-20"
+          className="text-center mb-10 sm:mb-12 md:mb-16 lg:mb-20"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-4 sm:mb-6 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-3 sm:mb-4 md:mb-6 leading-tight">
             <span className="text-slate-900">Ons</span>
             <br />
             <span className="bg-gradient-to-r from-blue-600 via-cyan-500 to-teal-500 bg-clip-text text-transparent">
@@ -45,7 +45,7 @@ export function Pool() {
         </motion.div>
 
         {/* Pool Images Grid */}
-        <div className="grid sm:grid-cols-2 gap-6 sm:gap-8 mb-12 sm:mb-20 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 md:gap-8 mb-10 sm:mb-12 md:mb-16 lg:mb-20 max-w-5xl mx-auto">
           {/* Zwembad Buitenkant */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}

@@ -169,11 +169,11 @@ export function Navigation() {
           className={cn(
             "md:hidden transition-all duration-300 ease-in-out",
             isOpen
-              ? "max-h-96 opacity-100"
+              ? "max-h-[600px] opacity-100"
               : "max-h-0 opacity-0 overflow-hidden"
           )}
         >
-          <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-200">
+          <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-200 max-h-[calc(100vh-80px)] overflow-y-auto">
             {navigation.map((item) => (
               <div key={item.name}>
                 {item.dropdown ? (

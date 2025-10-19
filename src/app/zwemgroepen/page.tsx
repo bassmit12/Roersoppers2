@@ -70,9 +70,9 @@ export default function ZwemgroepenPage() {
     <>
       <Navigation />
       <div className="min-h-screen bg-gradient-to-br from-cyan-50 via-blue-50 to-slate-50">
-        <main className="pt-20">
+        <main className="pt-16 sm:pt-20">
           {/* Hero Section */}
-          <section className="relative py-16 sm:py-20 overflow-hidden">
+          <section className="relative py-12 sm:py-16 md:py-20 overflow-hidden">
             {/* Background Elements */}
             <div className="absolute inset-0">
               <div className="absolute top-1/4 right-0 w-96 h-96 bg-blue-400/10 rounded-full blur-3xl" />

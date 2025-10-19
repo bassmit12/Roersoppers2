@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import {
-  Waves,
   Facebook,
   Instagram,
   Twitter,
@@ -10,7 +9,6 @@ import {
   MapPin,
   Phone,
   Mail,
-  Clock,
 } from "lucide-react";
 
 const navigation = [
@@ -82,60 +80,23 @@ export function Footer() {
         ))}
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12 md:py-16">
         {/* Main Footer Content */}
-        <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-8 sm:gap-10 md:gap-12 mb-8 sm:mb-12">
-          {/* Brand Section */}
-          <div className="sm:col-span-2 space-y-4 sm:space-y-6 text-center sm:text-left">
-            <div className="flex items-center justify-center sm:justify-start space-x-3 group">
-              <div className="relative">
-                <Waves className="h-8 w-8 sm:h-10 sm:w-10 text-[var(--light-aqua)] group-hover:animate-bounce" />
-                <div className="absolute inset-0 blur-xl bg-[var(--light-aqua)] opacity-0 group-hover:opacity-50 transition-opacity duration-500" />
-              </div>
-              <span className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-white to-[var(--light-aqua)] bg-clip-text text-transparent">
-                De Roersoppers
-              </span>
-            </div>
-            <p className="text-white/80 leading-relaxed text-sm sm:text-base max-w-md">
-              Al meer dan 40 jaar een begrip in de Roerstreek. Samen met
-              Zwemvereniging Patrick vormen we de Startgemeenschap Patrick - de
-              Roersoppers. Zwemmen voor iedereen, van jong tot oud en van
-              competitief tot recreatief.
-            </p>
-
-            {/* Social Links */}
-            <div className="flex flex-wrap gap-2 sm:gap-3 justify-center sm:justify-start">
-              {socialLinks.map((social) => {
-                const Icon = social.icon;
-                return (
-                  <Link
-                    key={social.name}
-                    href={social.href}
-                    className="group relative w-10 h-10 sm:w-12 sm:h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-[var(--light-aqua)] transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-[var(--light-aqua)]/50"
-                    aria-label={social.name}
-                  >
-                    <Icon className="w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform duration-300" />
-                    <div className="absolute inset-0 rounded-full bg-[var(--light-aqua)] opacity-0 group-hover:opacity-20 blur-md transition-opacity duration-300" />
-                  </Link>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* Quick Links */}
-          <div className="space-y-3 sm:space-y-4 text-center sm:text-left">
-            <h4 className="text-lg sm:text-xl font-bold text-[var(--light-aqua)] mb-4 sm:mb-6 flex items-center justify-center sm:justify-start">
-              <span className="w-1 h-5 sm:h-6 bg-[var(--light-aqua)] mr-2 sm:mr-3 rounded-full"></span>
+        <div className="flex justify-center mb-8 sm:mb-10 md:mb-12">
+          {/* Quick Links & Contact - 2 columns centered */}
+          <div className="grid grid-cols-2 gap-6 sm:gap-8 md:gap-12 lg:gap-16 w-full max-w-2xl">
+            {/* Quick Links */}
+            <div className="text-center">
+            <h4 className="text-base sm:text-lg lg:text-xl font-semibold mb-3 sm:mb-4 lg:mb-6 text-[var(--light-aqua)]">
               Snelle Links
             </h4>
-            <ul className="space-y-2 sm:space-y-3">
+            <ul className="space-y-2 sm:space-y-3 text-sm sm:text-base">
               {navigation.map((item) => (
                 <li key={item.name}>
                   <Link
                     href={item.href}
-                    className="group text-white/70 hover:text-[var(--light-aqua)] transition-all duration-300 flex items-center justify-center sm:justify-start text-sm sm:text-base"
+                    className="text-white/70 hover:text-[var(--light-aqua)] transition-all duration-300 hover:translate-x-1 inline-block"
                   >
-                    <span className="w-0 group-hover:w-2 h-0.5 bg-[var(--light-aqua)] mr-0 group-hover:mr-2 transition-all duration-300"></span>
                     {item.name}
                   </Link>
                 </li>
@@ -144,19 +105,16 @@ export function Footer() {
           </div>
 
           {/* Contact Info */}
-          <div className="space-y-3 sm:space-y-4 text-center sm:text-left">
-            <h4 className="text-lg sm:text-xl font-bold text-[var(--light-aqua)] mb-4 sm:mb-6 flex items-center justify-center sm:justify-start">
-              <span className="w-1 h-5 sm:h-6 bg-[var(--light-aqua)] mr-2 sm:mr-3 rounded-full"></span>
+          <div className="text-center">
+            <h4 className="text-base sm:text-lg lg:text-xl font-semibold mb-3 sm:mb-4 lg:mb-6 text-[var(--light-aqua)]">
               Contact
             </h4>
-            <div className="space-y-3 sm:space-y-4 text-white/80 text-sm sm:text-base">
+            <div className="space-y-3 sm:space-y-4 text-white/80 text-sm sm:text-base flex flex-col items-center">
               <div className="flex items-start space-x-2 sm:space-x-3 group hover:text-white transition-colors duration-300">
                 <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-[var(--light-aqua)] mt-0.5 group-hover:scale-110 transition-transform duration-300 flex-shrink-0" />
                 <div>
                   <p className="leading-relaxed">
-                    Apollobad Melick
-                    <br />
-                    Roerstreek, Nederland
+                    Melick, Limburg
                   </p>
                 </div>
               </div>
@@ -170,22 +128,27 @@ export function Footer() {
                 <Mail className="w-4 h-4 sm:w-5 sm:h-5 text-[var(--light-aqua)] group-hover:scale-110 transition-transform duration-300 flex-shrink-0" />
                 <p className="break-all">info@roersoppers.nl</p>
               </div>
-
-              <div className="mt-4 sm:mt-6 p-3 sm:p-4 bg-white/5 backdrop-blur-sm rounded-lg border border-white/10">
-                <div className="flex items-center space-x-2 mb-2 sm:mb-3">
-                  <Clock className="w-4 h-4 sm:w-5 sm:h-5 text-[var(--light-aqua)]" />
-                  <h5 className="font-semibold text-[var(--light-aqua)]">
-                    Trainingstijden
-                  </h5>
-                </div>
-                <div className="text-sm text-white/70 space-y-1">
-                  <p>Ma-Vr: 17:00 - 21:00</p>
-                  <p>Zat: 9:00 - 12:00</p>
-                  <p>Zon: Rustdag</p>
-                </div>
-              </div>
             </div>
           </div>
+          </div>
+        </div>
+
+        {/* Social Media Links - Before divider */}
+        <div className="flex flex-wrap gap-2 sm:gap-3 justify-center mb-8 sm:mb-10 md:mb-12">
+          {socialLinks.map((social) => {
+            const Icon = social.icon;
+            return (
+              <Link
+                key={social.name}
+                href={social.href}
+                className="group relative w-10 h-10 sm:w-12 sm:h-12 bg-white/10 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-[var(--light-aqua)] transition-all duration-300 hover:-translate-y-2 hover:shadow-lg hover:shadow-[var(--light-aqua)]/50"
+                aria-label={social.name}
+              >
+                <Icon className="w-4 h-4 sm:w-5 sm:h-5 group-hover:scale-110 transition-transform duration-300" />
+                <div className="absolute inset-0 rounded-full bg-[var(--light-aqua)] opacity-0 group-hover:opacity-20 blur-md transition-opacity duration-300" />
+              </Link>
+            );
+          })}
         </div>
 
         {/* Wave Divider */}
@@ -194,31 +157,58 @@ export function Footer() {
         </div>
 
         {/* Bottom Section */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-3 sm:gap-4 text-center md:text-left">
-          <p className="text-white/50 text-xs sm:text-sm">
-            © 2025 De Roersoppers. Alle rechten voorbehouden.
-          </p>
-          <div className="flex flex-wrap justify-center gap-3 sm:gap-6 text-xs sm:text-sm">
-            <Link
-              href="#"
-              className="text-white/50 hover:text-[var(--light-aqua)] transition-all duration-300 hover:translate-y-[-2px]"
-            >
-              Privacy Beleid
-            </Link>
-            <span className="text-white/20 hidden sm:inline">•</span>
-            <Link
-              href="#"
-              className="text-white/50 hover:text-[var(--light-aqua)] transition-all duration-300 hover:translate-y-[-2px]"
-            >
-              Algemene Voorwaarden
-            </Link>
-            <span className="text-white/20 hidden sm:inline">•</span>
-            <Link
-              href="#"
-              className="text-white/50 hover:text-[var(--light-aqua)] transition-all duration-300 hover:translate-y-[-2px]"
-            >
-              Cookie Beleid
-            </Link>
+        <div className="flex flex-col gap-4 sm:gap-6">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-3 sm:gap-4 text-center md:text-left">
+            <p className="text-white/50 text-xs sm:text-sm">
+              © 2025 De Roersoppers. Alle rechten voorbehouden.
+            </p>
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-6 text-xs sm:text-sm">
+              <Link
+                href="#"
+                className="text-white/50 hover:text-[var(--light-aqua)] transition-all duration-300 hover:translate-y-[-2px]"
+              >
+                Privacy Beleid
+              </Link>
+              <span className="text-white/20 hidden sm:inline">•</span>
+              <Link
+                href="#"
+                className="text-white/50 hover:text-[var(--light-aqua)] transition-all duration-300 hover:translate-y-[-2px]"
+              >
+                Algemene Voorwaarden
+              </Link>
+              <span className="text-white/20 hidden sm:inline">•</span>
+              <Link
+                href="#"
+                className="text-white/50 hover:text-[var(--light-aqua)] transition-all duration-300 hover:translate-y-[-2px]"
+              >
+                Cookie Beleid
+              </Link>
+            </div>
+          </div>
+
+          {/* Developer Credit */}
+          <div className="flex flex-col items-center gap-1 text-center border-t border-white/10 pt-4 sm:pt-6">
+            <p className="text-white/40 text-xs">
+              Gemaakt door{" "}
+              <span className="text-white/60 font-medium">Bas Smit</span>
+            </p>
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-3 text-xs text-white/40">
+              <a
+                href="mailto:bas.smit@live.nl"
+                className="hover:text-[var(--light-aqua)] transition-colors duration-300 flex items-center gap-1"
+              >
+                <Mail className="w-3 h-3" />
+                bas.smit@live.nl
+              </a>
+              <span className="text-white/20">•</span>
+              <a
+                href="tel:+31631279994"
+                className="hover:text-[var(--light-aqua)] transition-colors duration-300 flex items-center gap-1"
+              >
+                <Phone className="w-3 h-3" />
+                +31 6 31279994
+              </a>
+            </div>
           </div>
         </div>
       </div>

@@ -49,7 +49,7 @@ export function About() {
     <section
       id="about"
       ref={ref}
-      className="relative py-24 bg-gradient-to-br from-blue-50 via-white to-cyan-50 overflow-hidden"
+      className="relative py-16 sm:py-20 md:py-24 bg-gradient-to-br from-blue-50 via-white to-cyan-50 overflow-hidden"
     >
       {/* Background Elements */}
       <div className="absolute inset-0">
@@ -60,12 +60,12 @@ export function About() {
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
         {/* Section Header */}
         <motion.div
-          className="text-center mb-12 sm:mb-20"
+          className="text-center mb-10 sm:mb-12 md:mb-16 lg:mb-20"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black mb-4 sm:mb-6 leading-tight">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-3 sm:mb-4 md:mb-6 leading-tight">
             <span className="text-slate-900">Zwemmen met</span>
             <br />
             <span className="bg-gradient-to-r from-blue-600 via-cyan-500 to-teal-500 bg-clip-text text-transparent">
@@ -83,9 +83,9 @@ export function About() {
           </p>
         </motion.div>
 
-        {/* Features Grid */}
+        {/* Features Grid - Hidden on mobile */}
         <motion.div
-          className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-12 sm:mb-20"
+          className="hidden md:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 mb-10 sm:mb-12 md:mb-16 lg:mb-20"
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.4 }}
@@ -96,16 +96,16 @@ export function About() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.6 + index * 0.1 }}
-              className="group p-6 sm:p-8 bg-white/70 backdrop-blur-sm rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-white/40"
+              className="group p-4 sm:p-6 md:p-8 bg-white/70 backdrop-blur-sm rounded-2xl sm:rounded-3xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 border border-white/40"
             >
               <div
-                className={`inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 ${feature.bgColor} rounded-xl mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300`}
+                className={`inline-flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 md:w-12 md:h-12 ${feature.bgColor} rounded-xl mb-2 sm:mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300`}
               >
                 <feature.icon
                   className={`w-5 h-5 sm:w-6 sm:h-6 ${feature.iconColor}`}
                 />
               </div>
-              <h3 className="text-lg sm:text-xl font-bold text-slate-800 mb-2 sm:mb-3">
+              <h3 className="text-base sm:text-lg md:text-xl font-bold text-slate-800 mb-2">
                 {feature.title}
               </h3>
               <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
@@ -116,7 +116,7 @@ export function About() {
         </motion.div>
 
         {/* Training Photos Grid */}
-        <div className="grid md:grid-cols-2 gap-6 sm:gap-8 mb-12 sm:mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 mb-10 sm:mb-12 md:mb-16 lg:mb-20">
           {/* First Training Image */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}

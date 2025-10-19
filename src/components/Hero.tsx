@@ -89,17 +89,17 @@ export function Hero() {
         </motion.div>
 
         {/* Main Hero Content */}
-        <div className="container mx-auto px-4 sm:px-6 pt-16 sm:pt-20 pb-12 sm:pb-16">
-          <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center min-h-[75vh] sm:min-h-[80vh]">
+        <div className="container mx-auto px-4 sm:px-6 pt-20 sm:pt-24 pb-16 sm:pb-20">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center min-h-[calc(100vh-120px)] sm:min-h-[80vh]">
             {/* Left Column - Text Content */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="space-y-8 text-center lg:text-left"
+              className="space-y-6 sm:space-y-8 text-center lg:text-left"
             >
               {/* Main Heading */}
-              <div className="space-y-3 sm:space-y-4">
+              <div className="space-y-2 sm:space-y-3">
                 <motion.h1
                   initial={{ opacity: 0, y: 30 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -110,7 +110,7 @@ export function Hero() {
                     De Roersoppers
                   </span>
                   <br />
-                  <span className="text-white text-3xl sm:text-4xl lg:text-5xl">
+                  <span className="text-white text-2xl sm:text-4xl lg:text-5xl">
                     Zwemmen met passie
                   </span>
                 </motion.h1>
@@ -121,76 +121,101 @@ export function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6 }}
-                className="text-base sm:text-xl text-white/90 leading-relaxed max-w-lg drop-shadow-md mx-auto lg:mx-0"
+                className="text-sm sm:text-lg lg:text-xl text-white/90 leading-relaxed max-w-lg drop-shadow-md mx-auto lg:mx-0 px-2 sm:px-0"
               >
                 Een bruisende zwemvereniging waar techniek, uitdaging en plezier
                 samenkomen. Met een enthousiast team en fijne sfeer kan elke
                 zwemmer groeien en genieten – recreatief of in competitie.
               </motion.p>
 
-              {/* CTA Buttons */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1 }}
-                className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4 items-center justify-center lg:justify-start"
-              >
-                <a href="/informatie">
-                  <Button
-                    size="lg"
-                    className="bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 group text-sm sm:text-base"
+              {/* CTA Buttons & Social Links - 2 column grid on mobile, stacked on desktop */}
+              <div className="space-y-4 lg:space-y-6 pt-4 w-full max-w-md mx-auto lg:mx-0 lg:max-w-none">
+                {/* Buttons Row */}
+                <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:flex lg:flex-row lg:gap-6">
+                  {/* Wordt lid Button */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 1 }}
+                    className="col-span-2 sm:col-span-1"
                   >
-                    <span>Wordt lid</span>
-                    <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform" />
-                  </Button>
-                </a>
+                    <a href="/informatie" className="block">
+                      <Button
+                        size="lg"
+                        className="w-full lg:w-auto bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white px-4 sm:px-8 py-3 sm:py-4 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 group text-sm sm:text-base"
+                      >
+                        <span>Wordt lid</span>
+                        <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                      </Button>
+                    </a>
+                  </motion.div>
 
-                <a href="/trainingsschema">
-                  <Button
-                    variant="outline"
-                    size="lg"
-                    className="border-2 border-white text-white hover:bg-white/10 backdrop-blur-sm px-6 sm:px-8 py-3 sm:py-4 rounded-xl transition-all duration-300 text-sm sm:text-base"
+                  {/* Trainings Schema Button */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 1.1 }}
+                    className="col-span-2 sm:col-span-1"
                   >
-                    <span>Trainings Schema</span>
-                  </Button>
-                </a>
-              </motion.div>
+                    <a href="/trainingsschema" className="block">
+                      <Button
+                        variant="outline"
+                        size="lg"
+                        className="w-full lg:w-auto border-2 border-white text-white hover:bg-white/10 backdrop-blur-sm px-4 sm:px-8 py-3 sm:py-4 rounded-xl transition-all duration-300 text-sm sm:text-base"
+                      >
+                        <span>Trainings Schema</span>
+                      </Button>
+                    </a>
+                  </motion.div>
+                </div>
 
-              {/* Social Media Links */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.2 }}
-                className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-center justify-center lg:justify-start"
-              >
-                <a
-                  href="https://www.facebook.com/roersoppers"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-white/90 hover:text-white transition-colors drop-shadow-lg group"
-                >
-                  <div className="w-10 h-10 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110">
-                    <Facebook className="w-5 h-5" />
-                  </div>
-                  <span className="text-sm sm:text-base font-medium">
-                    Volg ons op Facebook
-                  </span>
-                </a>
+                {/* Social Links Row */}
+                <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:flex lg:flex-row lg:gap-6">
+                  {/* Facebook Link */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 1.2 }}
+                    className="col-span-1"
+                  >
+                    <a
+                      href="https://www.facebook.com/roersoppers"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center lg:justify-start gap-2 text-white/90 hover:text-white transition-colors drop-shadow-lg group"
+                    >
+                      <div className="w-9 h-9 sm:w-10 sm:h-10 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110">
+                        <Facebook className="w-4 h-4 sm:w-5 sm:h-5" />
+                      </div>
+                      <span className="text-sm sm:text-base font-medium">
+                        Facebook
+                      </span>
+                    </a>
+                  </motion.div>
 
-                <a
-                  href="https://www.instagram.com/roersoppers"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-white/90 hover:text-white transition-colors drop-shadow-lg group"
-                >
-                  <div className="w-10 h-10 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110">
-                    <Instagram className="w-5 h-5" />
-                  </div>
-                  <span className="text-sm sm:text-base font-medium">
-                    Volg ons op Instagram
-                  </span>
-                </a>
-              </motion.div>
+                  {/* Instagram Link */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 1.3 }}
+                    className="col-span-1"
+                  >
+                    <a
+                      href="https://www.instagram.com/roersoppers"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center lg:justify-start gap-2 text-white/90 hover:text-white transition-colors drop-shadow-lg group"
+                    >
+                      <div className="w-9 h-9 sm:w-10 sm:h-10 bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110">
+                        <Instagram className="w-4 h-4 sm:w-5 sm:h-5" />
+                      </div>
+                      <span className="text-sm sm:text-base font-medium">
+                        Instagram
+                      </span>
+                    </a>
+                  </motion.div>
+                </div>
+              </div>
             </motion.div>
 
             {/* Right Column - Video Content */}

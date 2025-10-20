@@ -1,52 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import {
-  Play,
-  ArrowRight,
-  Facebook,
-  Instagram,
-} from "lucide-react";
+import { ArrowRight, Facebook, Instagram } from "lucide-react";
 import { Button } from "./ui/button";
-import { VideoModal } from "./VideoModal";
-import { useState, useRef, useEffect } from "react";
+import Image from "next/image";
 
 export function Hero() {
-  const [isVideoPlaying, setIsVideoPlaying] = useState(true);
-  const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  // Set video start time to 54 seconds
-  useEffect(() => {
-    const video = videoRef.current;
-    if (video) {
-      const handleLoadedMetadata = () => {
-        video.currentTime = 54; // Start from 0:54
-      };
-
-      video.addEventListener("loadedmetadata", handleLoadedMetadata);
-
-      // If video is already loaded
-      if (video.readyState >= 1) {
-        video.currentTime = 54;
-      }
-
-      return () => {
-        video.removeEventListener("loadedmetadata", handleLoadedMetadata);
-      };
-    }
-  }, []);
-
-  const toggleVideo = () => {
-    if (videoRef.current) {
-      if (isVideoPlaying) {
-        videoRef.current.pause();
-      } else {
-        videoRef.current.play();
-      }
-      setIsVideoPlaying(!isVideoPlaying);
-    }
-  };
 
   return (
     <div className="relative min-h-screen overflow-hidden">
@@ -200,68 +159,29 @@ export function Hero() {
               </div>
             </motion.div>
 
-            {/* Right Column - Video Content */}
+            {/* Right Column - Logo */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.4, duration: 0.8 }}
               className="relative hidden lg:block"
             >
-              {/* Main video container */}
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-                {/* Hero Video */}
-                <div className="aspect-[4/5] relative">
-                  <video
-                    ref={videoRef}
-                    className="w-full h-full object-cover"
-                    autoPlay
-                    muted
-                    loop
-                    playsInline
-                    poster="/video/hero-poster.jpg" // Optional: add a poster image
-                  >
-                    <source src="/video/hero.mp4" type="video/mp4" />
-                    {/* Fallback content */}
-                    <div className="w-full h-full bg-gradient-to-br from-blue-500 via-cyan-400 to-teal-300 flex items-center justify-center">
-                      <div className="text-center text-white">
-                        <div className="text-8xl mb-4">🏊‍♂️</div>
-                        <h3 className="text-2xl font-bold mb-2">
-                          Swimming Action
-                        </h3>
-                        <p className="text-blue-100 text-lg">
-                          Team De Roersoppers in actie
-                        </p>
-                      </div>
-                    </div>
-                  </video>
-                </div>
-
-                {/* Video overlay gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
-
-                {/* Play/Pause button overlay */}
-                <motion.button
-                  onClick={toggleVideo}
-                  whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="absolute bottom-4 right-4 w-12 h-12 bg-white/90 hover:bg-white rounded-full flex items-center justify-center shadow-lg transition-all duration-300 group"
+              {/* Logo container */}
+              <div className="relative aspect-square flex items-center justify-center">
+                <motion.div
+                  initial={{ scale: 0.8, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ delay: 0.6, duration: 0.8 }}
+                  className="relative w-full h-full"
                 >
-                  {isVideoPlaying ? (
-                    <div className="w-3 h-3 bg-blue-600 rounded-sm" />
-                  ) : (
-                    <Play className="w-5 h-5 text-blue-600 ml-0.5" />
-                  )}
-                </motion.button>
-
-                {/* Video title overlay */}
-                <div className="absolute bottom-4 left-4 text-white">
-                  <h3 className="text-lg font-bold drop-shadow-lg">
-                    De Roersoppers
-                  </h3>
-                  <p className="text-sm text-white/90 drop-shadow-lg">
-                    In actie in het zwembad
-                  </p>
-                </div>
+                  <Image
+                    src="/images/logo.png"
+                    alt="De Roersoppers Logo"
+                    fill
+                    className="object-contain"
+                    priority
+                  />
+                </motion.div>
               </div>
             </motion.div>
           </div>
@@ -329,14 +249,6 @@ export function Hero() {
           />
         ))}
       </div>
-
-      {/* Video Modal */}
-      <VideoModal
-        isOpen={isVideoModalOpen}
-        onClose={() => setIsVideoModalOpen(false)}
-        videoSrc="/video/hero.mp4"
-        title="De Roersoppers - Zwemteam Video"
-      />
     </div>
   );
 }

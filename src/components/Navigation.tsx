@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Menu, X, ChevronDown } from "lucide-react";
+import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 
 type NavigationItem = {
@@ -46,10 +47,12 @@ export function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const pathname = usePathname();
+  const isHomePage = pathname === "/";
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 100);
+      setIsScrolled(window.scrollY > 50);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -68,10 +71,10 @@ export function Navigation() {
   return (
     <nav
       className={cn(
-        "fixed top-0 w-full z-50 transition-all duration-300",
-        isScrolled
+        "fixed top-0 w-full z-50 transition-all duration-500",
+        isScrolled || !isHomePage
           ? "bg-white/98 backdrop-blur-md shadow-lg"
-          : "bg-white/95 backdrop-blur-sm"
+          : "bg-gradient-to-b from-black/30 to-transparent backdrop-blur-sm"
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -89,8 +92,10 @@ export function Navigation() {
               className="h-10 w-10"
             />
             <span
-              className="text-xl font-bold"
-              style={{ color: "var(--primary-blue)" }}
+              className={cn(
+                "text-xl font-bold transition-colors duration-500",
+                isScrolled || !isHomePage ? "text-[var(--primary-blue)]" : "text-white"
+              )}
             >
               De Roersoppers
             </span>
@@ -104,7 +109,12 @@ export function Navigation() {
                   {item.dropdown ? (
                     <div className="relative">
                       <button
-                        className="flex items-center text-gray-900 hover:text-[var(--aqua)] px-3 py-2 text-sm font-medium transition-colors duration-300"
+                        className={cn(
+                          "flex items-center px-3 py-2 text-sm font-medium transition-all duration-500",
+                          isScrolled || !isHomePage
+                            ? "text-gray-900 hover:text-[var(--aqua)]"
+                            : "text-white/90 hover:text-white"
+                        )}
                         onMouseEnter={() => setActiveDropdown(item.name)}
                       >
                         {item.name}
@@ -137,7 +147,12 @@ export function Navigation() {
                   ) : (
                     <Link
                       href={item.href}
-                      className="relative text-gray-900 hover:text-[var(--aqua)] px-3 py-2 text-sm font-medium transition-colors duration-300 group"
+                      className={cn(
+                        "relative px-3 py-2 text-sm font-medium transition-all duration-500 group",
+                        isScrolled || !isHomePage
+                          ? "text-gray-900 hover:text-[var(--aqua)]"
+                          : "text-white/90 hover:text-white"
+                      )}
                       onClick={handleLinkClick}
                     >
                       {item.name}
@@ -153,7 +168,12 @@ export function Navigation() {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[var(--aqua)]"
+              className={cn(
+                "inline-flex items-center justify-center p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[var(--aqua)] transition-colors duration-500",
+                isScrolled || !isHomePage
+                  ? "text-gray-400 hover:text-gray-500 hover:bg-gray-100"
+                  : "text-white/80 hover:text-white hover:bg-white/10"
+              )}
             >
               {isOpen ? (
                 <X className="block h-6 w-6" />

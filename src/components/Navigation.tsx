@@ -79,7 +79,7 @@ export function Navigation() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
+          {/* Logo roersoppers */}
           <Link
             href="/"
             className="flex items-center space-x-2 hover:opacity-80 transition-opacity duration-300"
@@ -94,7 +94,9 @@ export function Navigation() {
             <span
               className={cn(
                 "text-xl font-bold transition-colors duration-500",
-                isScrolled || !isHomePage ? "text-[var(--primary-blue)]" : "text-white"
+                isScrolled || !isHomePage
+                  ? "text-[var(--primary-blue)]"
+                  : "text-white"
               )}
             >
               De Roersoppers

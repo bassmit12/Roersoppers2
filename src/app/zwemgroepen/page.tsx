@@ -12,7 +12,7 @@ export default function ZwemgroepenPage() {
   const zwemgroepen = [
     {
       title: "Jeugd Wedstrijd",
-      image: "/images/Wedstrijd.jpg",
+      image: "/images/Jeugd_Wedstrijd.jpg",
       color: "from-blue-500 to-cyan-500",
       description:
         "Heb jij je A-diploma op zak en wil je verder leren zwemmen? Dan is onze jeugdgroep perfect voor jou! Onze enthousiaste trainers leren je nieuwe zwemtechnieken en helpen je steeds beter te worden. Je zwemt met kinderen van jouw niveau en leeftijd, zodat je altijd goed kunt meedoen. Serieuze trainingen worden afgewisseld met spel en plezier, en wedstrijden zijn precies uitdagend genoeg voor jou!",
@@ -26,7 +26,7 @@ export default function ZwemgroepenPage() {
     },
     {
       title: "Jongeren Wedstrijd",
-      image: "/images/jongeren_wedstrijd.avif",
+      image: "/images/jongeren_wedstrijd_2.jpg",
       color: "from-yellow-500 to-orange-500",
       description:
         "Heb jij een passie voor zwemmen en wil je jezelf écht uitdagen? Sluit je dan aan bij dit team, waar je traint op techniek, snelheid en conditie, met als doel deel te nemen aan wedstrijden. Als lid van De Roersoppers vertegenwoordig je ons in de districtscompetitie, kampioenschappen en invitatiewedstrijden.",
@@ -35,21 +35,21 @@ export default function ZwemgroepenPage() {
     },
     {
       title: "Jongeren Recreatief",
-      image: "/images/trainingInActie2.jpg",
+      image: "/images/jongeren_recreatief.jpg",
       color: "from-teal-500 to-emerald-500",
       description:
         "Ben jij een fanatieke jongere die serieus wil trainen, maar liever geen wedstrijden zwemt? Dan is deze recreatieve groep perfect voor jou! Je werkt aan techniek, snelheid en conditie, zonder de wedstrijddruk. Samen met andere enthousiaste zwemmers train je op hoog niveau in een gezellige en motiverende sfeer. Of je nu je conditie wilt verbeteren of gewoon plezier beleeft aan intensief zwemmen: hier vind je jouw plek in het water!",
     },
     {
       title: "Wedstrijdmasters",
-      image: "/images/wedstrijdploeg.jpg",
+      image: "/images/slippers.jpg",
       color: "from-purple-500 to-pink-500",
       description:
         "Ook op latere leeftijd kun je nog fanatiek blijven zwemmen. De Wedstrijdmasters doen mee aan speciale zwemwedstrijden waarin leeftijdscategorieën per vijf jaar oplopen. Iedereen die fit genoeg is kan meedoen. Er is een enthousiaste groep die écht voor de prestaties gaat. Zij trainen met de jeugd mee om hun techniek en snelheid te blijven ontwikkelen.",
     },
     {
       title: "Masters 1",
-      image: "/images/senioren.jpg",
+      image: "/images/Masters1.jpg",
       color: "from-blue-500 to-indigo-500",
       description:
         "Wil je je conditie op peil houden, genieten van een fijne training en géén wedstrijden zwemmen? Dan is Masters 1 iets voor jou! Hier zwem je in een baan die past bij jouw niveau. Ben je een oud-wedstrijdzwemmer en zijn alle zwemtechnieken bekend, dan zwem je in baan 1 of 2. Wil je je zwemtechniek verbeteren of eindelijk eens goed leren de borstcrawl te zwemmen, dan hoor je thuis in baan 3 of 4. Af en toe een baantje overslaan om uit te puffen is geen probleem. Plezier en beweging staan centraal, maar vergis je niet: er wordt hier serieus getraind!",

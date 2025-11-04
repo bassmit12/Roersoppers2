@@ -39,7 +39,7 @@ export function About() {
       icon: Heart,
       title: "Voor Iedereen",
       description:
-        "Alle leeftijden en niveaus zijn welkom - van peuters tot senioren, van recreatie tot topsport.",
+        "Alle leeftijden en niveaus zijn welkom - van recreatie tot topsport.",
       iconColor: "text-purple-500",
       bgColor: "bg-purple-100",
     },
@@ -74,8 +74,7 @@ export function About() {
           </h2>
 
           <p className="text-base sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed px-4">
-            Al meer dan 20 jaar zijn wij de gezelligste zwemvereniging van
-            Roermond. Bij ons draait het om{" "}
+            Al meer dan 50 jaar in Roerdalen. Bij ons draait het om{" "}
             <span className="font-bold text-blue-600">
               plezier in het water
             </span>

@@ -95,7 +95,7 @@ const daysOfWeek = [
 const scheduleByDay: { [key: string]: TrainingSession[] } = {};
 daysOfWeek.forEach((day) => {
   scheduleByDay[day] = trainingSessions.filter(
-    (session) => session.day === day
+    (session) => session.day === day,
   );
 });
 
@@ -369,8 +369,8 @@ export default function TrainingsschemaPage() {
                   </div>
                 </div>
                 <p className="text-slate-700 leading-relaxed">
-                  Wijzigingen worden tijdig via de{" "}
-                  <strong>website en nieuwsbrief</strong> gecommuniceerd
+                  Wijzigingen worden tijdig via de <strong>Socials</strong>{" "}
+                  gecommuniceerd
                 </p>
               </div>
             </div>

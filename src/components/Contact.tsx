@@ -15,7 +15,7 @@ const contactInfo: ContactInfo[] = [
   {
     icon: <MapPin className="w-6 h-6" />,
     title: "Locatie",
-    details: ["Apollobad Melick", "Roerstreek, Nederland"],
+    details: ["Feel Fit Center", "Roerdalen, Nederland"],
   },
   {
     icon: <Phone className="w-6 h-6" />,
@@ -42,7 +42,7 @@ export function Contact() {
   const [submitted, setSubmitted] = useState(false);
 
   const handleInputChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
   ) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
@@ -93,7 +93,7 @@ export function Contact() {
 
           <p className="text-base sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed px-4">
             Klaar om te duiken? Neem contact met ons op en word onderdeel van
-            onze zwemfamilie!
+            onze zwemfamilie en train 4 keer gratis mee!
           </p>
         </motion.div>
 
@@ -228,7 +228,7 @@ export function Contact() {
                     required
                     rows={5}
                     className="w-full px-3 sm:px-4 py-2.5 sm:py-3 border border-slate-200 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 resize-none text-slate-900 placeholder-slate-400 bg-white text-sm sm:text-base"
-                    placeholder="Vertel ons over je interesse om lid te worden van ons team..."
+                    placeholder="Je bericht"
                   />
                 </div>
 

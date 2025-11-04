@@ -6,7 +6,6 @@ import { Button } from "./ui/button";
 import Image from "next/image";
 
 export function Hero() {
-
   return (
     <div className="relative min-h-screen overflow-hidden">
       {/* Video Background */}
@@ -52,7 +51,7 @@ export function Hero() {
                   </span>
                   <br />
                   <span className="text-white text-2xl sm:text-4xl lg:text-5xl">
-                    Zwemmen met passie
+                    Meer dan zwemmen alleen
                   </span>
                 </motion.h1>
               </div>
@@ -64,9 +63,10 @@ export function Hero() {
                 transition={{ delay: 0.6 }}
                 className="text-sm sm:text-lg lg:text-xl text-white/90 leading-relaxed max-w-lg drop-shadow-md mx-auto lg:mx-0 px-2 sm:px-0"
               >
-                Een bruisende zwemvereniging waar techniek, uitdaging en plezier
-                samenkomen. Met een enthousiast team en fijne sfeer kan elke
-                zwemmer groeien en genieten – recreatief of in competitie.
+                Of je nu je eerste meters maakt, traint voor competitie of
+                gewoon met een grote glimlach het water in duikt, bij De
+                Roersoppers voelt iedereen zich thuis. Hier leer je niet alleen
+                zwemmen, maar groei je ook als sporter én als mens.
               </motion.p>
 
               {/* CTA Buttons & Social Links - 2 column grid on mobile, stacked on desktop */}

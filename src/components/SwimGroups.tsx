@@ -64,7 +64,7 @@ export function SwimGroups() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 md:p-8 text-white">
               <h3 className="text-2xl sm:text-3xl font-bold mb-2 sm:mb-3">
-                Junioren
+                Jeugd
               </h3>
               <p className="text-blue-100 text-sm sm:text-base md:text-lg leading-relaxed">
                 Voor jonge zwemmers die de basis technieken leren en plezier
@@ -94,7 +94,7 @@ export function SwimGroups() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 md:p-8 text-white">
               <h3 className="text-2xl sm:text-3xl font-bold mb-2 sm:mb-3">
-                Wedstrijdploeg
+                Jongeren
               </h3>
               <p className="text-sm sm:text-base md:text-lg leading-relaxed">
                 Competitieve zwemmers die deelnemen aan regionale en nationale
@@ -114,7 +114,7 @@ export function SwimGroups() {
           >
             <div className="aspect-[4/3] relative">
               <Image
-                src="/images/senioren.jpg"
+                src="/images/masters.jpg"
                 alt="Senioren - De Roersoppers"
                 fill
                 className="object-cover transition-transform duration-300 group-hover:scale-110"
@@ -124,7 +124,7 @@ export function SwimGroups() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 md:p-8 text-white">
               <h3 className="text-2xl sm:text-3xl font-bold mb-2 sm:mb-3">
-                Senioren
+                Masters
               </h3>
               <p className="text-purple-100 text-sm sm:text-base md:text-lg leading-relaxed">
                 Ervaren zwemmers die blijven trainen voor fitness en plezier

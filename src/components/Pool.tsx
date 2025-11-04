@@ -38,9 +38,9 @@ export function Pool() {
           </h2>
 
           <p className="text-base sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed px-4">
-            Wij trainen in een modern binnenzwembad met uitstekende
+            Wij trainen in een nostalgisch binnenzwembad met uitstekende
             faciliteiten. Onze locatie biedt optimale omstandigheden voor
-            zwemmers van alle niveaus, het hele jaar door
+            zwemmers van alle niveaus.
           </p>
         </motion.div>
 
@@ -84,7 +84,7 @@ export function Pool() {
           >
             <div className="aspect-[4/3] relative">
               <Image
-                src="/images/zwembad_binnen.jpg"
+                src="/images/zwemmer_zwembad.jpg"
                 alt="Binnenzwembad"
                 fill
                 className="object-cover transition-transform duration-300 group-hover:scale-110"
@@ -97,7 +97,7 @@ export function Pool() {
                 Binnenzwembad
               </h3>
               <p className="text-blue-100 text-sm sm:text-base md:text-lg leading-relaxed">
-                Trainingen het hele jaar door in optimale omstandigheden
+                Trainingen het hele jaar door
               </p>
             </div>
             {/* Hover effect */}

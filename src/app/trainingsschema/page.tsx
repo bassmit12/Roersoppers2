@@ -2,7 +2,6 @@
 
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
-import Link from "next/link";
 import { Calendar, Clock } from "lucide-react";
 import { motion } from "framer-motion";
 import { useRef } from "react";

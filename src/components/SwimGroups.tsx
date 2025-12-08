@@ -94,7 +94,7 @@ export function SwimGroups() {
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
             <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 md:p-8 text-white">
               <h3 className="text-2xl sm:text-3xl font-bold mb-2 sm:mb-3">
-                Jongeren
+                Selectie
               </h3>
               <p className="text-sm sm:text-base md:text-lg leading-relaxed">
                 Competitieve zwemmers die deelnemen aan regionale en nationale

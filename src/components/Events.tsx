@@ -41,7 +41,7 @@ export function Events() {
           <p className="text-base sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed px-4">
             Ontdek de laatste updates, foto&apos;s en verhalen van{" "}
             <span className="font-bold text-blue-600">De Roersoppers</span> via
-            onze Instagram! 📸
+            onze Instagram!
           </p>
         </motion.div>
 

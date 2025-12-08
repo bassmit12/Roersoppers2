@@ -20,7 +20,7 @@ const contactInfo: ContactInfo[] = [
   {
     icon: <Phone className="w-6 h-6" />,
     title: "Telefoon",
-    details: ["0475-533635"],
+    details: ["06-128447980"],
   },
   {
     icon: <Mail className="w-6 h-6" />,
@@ -93,7 +93,7 @@ export function Contact() {
 
           <p className="text-base sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed px-4">
             Klaar om te duiken? Neem contact met ons op en word onderdeel van
-            onze zwemfamilie en train 4 keer gratis mee!
+            onze zwemfamilie en zwem 4 keer gratis mee!
           </p>
         </motion.div>
 
@@ -132,29 +132,6 @@ export function Contact() {
                 </motion.div>
               ))}
             </div>
-
-            {/* Additional Info */}
-            <motion.div
-              className="mt-6 sm:mt-8 p-4 sm:p-6 bg-white/70 backdrop-blur-sm rounded-2xl shadow-lg border border-white/40"
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.8 }}
-            >
-              <h4 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3 text-slate-900">
-                Trainingstijden
-              </h4>
-              <div className="space-y-1.5 sm:space-y-2 text-sm sm:text-base text-slate-600">
-                <p>
-                  <strong>Maandag - Vrijdag:</strong> 17:00 - 21:00
-                </p>
-                <p>
-                  <strong>Zaterdag:</strong> 9:00 - 12:00
-                </p>
-                <p>
-                  <strong>Zondag:</strong> Rustdag
-                </p>
-              </div>
-            </motion.div>
           </motion.div>
 
           {/* Contact Form */}

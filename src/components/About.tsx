@@ -13,7 +13,7 @@ export function About() {
   const features = [
     {
       icon: Target,
-      title: "Professionele Training",
+      title: "Sportieve Training",
       description:
         "Van beginners tot gevorderden - onze ervaren trainers helpen jou jouw zwemtechniek te verbeteren en doelen te bereiken.",
       iconColor: "text-red-500",
@@ -78,7 +78,7 @@ export function About() {
             <span className="font-bold text-blue-600">
               plezier in het water
             </span>
-            , persoonlijke groei en een hechte teamgeest! 🏊‍♀️
+            , persoonlijke groei en een hechte teamgeest!
           </p>
         </motion.div>
 
@@ -125,7 +125,7 @@ export function About() {
             <div className="relative rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300">
               <div className="aspect-[4/3] relative">
                 <Image
-                  src="/images/trainingInActie2.jpg"
+                  src="/images/KoenGeeftTraining.jpeg"
                   alt="Training bij De Roersoppers"
                   fill
                   className="object-cover"

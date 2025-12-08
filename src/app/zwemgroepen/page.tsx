@@ -12,20 +12,20 @@ export default function ZwemgroepenPage() {
   const zwemgroepen = [
     {
       title: "Jeugd Wedstrijd",
-      image: "/images/Jeugd_Wedstrijd.jpg",
+      image: "/images/Jeugd_Wedstrijd_AI.png",
       color: "from-blue-500 to-cyan-500",
       description:
         "Heb jij je A-diploma op zak en wil je verder leren zwemmen? Dan is onze jeugdgroep perfect voor jou! Onze enthousiaste trainers leren je nieuwe zwemtechnieken en helpen je steeds beter te worden. Je zwemt met kinderen van jouw niveau en leeftijd, zodat je altijd goed kunt meedoen. Serieuze trainingen worden afgewisseld met spel en plezier, en wedstrijden zijn precies uitdagend genoeg voor jou!",
     },
     {
       title: "Jeugd Recreatief",
-      image: "/images/jeugd_recreatief2.jpg",
+      image: "/images/Jeugd_Recreatief_Flippers.jpeg",
       color: "from-cyan-500 to-teal-500",
       description:
         "Heb jij je A-diploma op zak en wil je vooral plezier beleven in het water? Dan is onze recreatieve jeugdgroep precies wat je zoekt! Onze enthousiaste trainers helpen je om nieuwe zwemtechnieken onder de knie te krijgen, maar richten zich vooral op plezier en samenspel met leeftijdsgenootjes. Je traint op je eigen tempo, zonder de druk van wedstrijden. Wil je toch een keertje ervaren hoe het is om een echte zwemwedstrijd te zwemmen? Dat kan! Maar als je liever gewoon traint en lol maakt, ben je net zo welkom. Bij ons staat genieten van het zwemmen altijd voorop!",
     },
     {
-      title: "Jongeren Wedstrijd",
+      title: "Selectie",
       image: "/images/jongeren_wedstrijd_2.jpg",
       color: "from-yellow-500 to-orange-500",
       description:
@@ -34,18 +34,11 @@ export default function ZwemgroepenPage() {
         "Onze trainingen zijn afgestemd op het wedstrijdschema en bestaan uit techniek-, duur- en sprinttrainingen. Om écht beter te worden, verwachten we dat je minimaal drie keer per week traint. Elk seizoen zwem je zo'n 10 tot 12 wedstrijden, waarbij de competitiewedstrijden het absolute hoogtepunt vormen. Samen gaan we voor de beste prestaties!",
     },
     {
-      title: "Jongeren Recreatief",
-      image: "/images/jongeren_recreatief.jpg",
-      color: "from-teal-500 to-emerald-500",
-      description:
-        "Ben jij een fanatieke jongere die serieus wil trainen, maar liever geen wedstrijden zwemt? Dan is deze recreatieve groep perfect voor jou! Je werkt aan techniek, snelheid en conditie, zonder de wedstrijddruk. Samen met andere enthousiaste zwemmers train je op hoog niveau in een gezellige en motiverende sfeer. Of je nu je conditie wilt verbeteren of gewoon plezier beleeft aan intensief zwemmen: hier vind je jouw plek in het water!",
-    },
-    {
       title: "Wedstrijdmasters",
       image: "/images/slippers.jpg",
       color: "from-purple-500 to-pink-500",
       description:
-        "Ook op latere leeftijd kun je nog fanatiek blijven zwemmen. De Wedstrijdmasters doen mee aan speciale zwemwedstrijden waarin leeftijdscategorieën per vijf jaar oplopen. Iedereen die fit genoeg is kan meedoen. Er is een enthousiaste groep die écht voor de prestaties gaat. Zij trainen met de jeugd mee om hun techniek en snelheid te blijven ontwikkelen.",
+        "Ook op latere leeftijd kun je nog fanatiek blijven zwemmen. De Wedstrijdmasters doen mee aan speciale zwemwedstrijden waarin leeftijdscategorieën per vijf jaar oplopen. Iedereen die fit genoeg is kan meedoen. Er is een enthousiaste groep die écht voor de prestaties gaat. Zij trainen met de selectie mee om hun techniek en snelheid te blijven ontwikkelen.",
     },
     {
       title: "Masters 1",

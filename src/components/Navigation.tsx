@@ -37,6 +37,8 @@ const navigation: NavigationItem[] = [
     name: "Informatie",
     href: "#",
     dropdown: [
+      { name: "Over Ons", href: "/informatie/over-ons" },
+      { name: "Startgemeenschap", href: "/informatie/startgemeenschap" },
       { name: "Aan / Afmelden", href: "/informatie/aanmelden" },
       { name: "Code Blauw", href: "/informatie/code-blauw" },
     ],

@@ -19,9 +19,8 @@ const navigation: NavigationItem[] = [
     href: "/",
     dropdown: [
       { name: "Over Ons", href: "/#about" },
-      { name: "Zwemgroepen", href: "/#swim-groups" },
-      { name: "Team", href: "/#team" },
-      { name: "Evenementen", href: "/#events" },
+      { name: "Zwemgroepen", href: "/#groups" },
+      { name: "Nieuws", href: "/#events" },
       { name: "Contact", href: "/#contact" },
     ],
   },

@@ -38,7 +38,7 @@ const trainingSessions: TrainingSession[] = [
   {
     day: "Donderdag",
     time: "18:30 - 19:30",
-    group: "Jeugd recreatief/Jeugd wedstrijd",
+    group: "Jeugd recreatief / Jeugd wedstrijd",
   },
   {
     day: "Donderdag",
@@ -52,18 +52,18 @@ const trainingSessions: TrainingSession[] = [
   },
   {
     day: "Donderdag",
-    time: "21:30 - 22:30",
+    time: "21:30 - 22:15",
     group: "Masters 2",
   },
   {
     day: "Zaterdag",
     time: "08:00 - 09:00",
-    group: "Selectie / Wedstrijdmasters",
+    group: "Selectie / Masters 1",
   },
   {
     day: "Zaterdag",
     time: "12:00 - 13:15",
-    group: "Jeugd recreatief/Jeugd wedstrijd",
+    group: "Jeugd recreatief / Jeugd wedstrijd",
   },
 ];
 
@@ -161,14 +161,6 @@ export default function TrainingsschemaPage() {
                     }`}
                   >
                     <div className="text-sm sm:text-base">{day}</div>
-                    {scheduleByDay[day].length > 0 && (
-                      <div className="mt-1 text-xs text-cyan-600 font-semibold">
-                        {scheduleByDay[day].length}{" "}
-                        {scheduleByDay[day].length === 1
-                          ? "training"
-                          : "trainingen"}
-                      </div>
-                    )}
                   </div>
                 ))}
               </div>
@@ -239,12 +231,6 @@ export default function TrainingsschemaPage() {
                         <h3 className="text-xl font-bold text-slate-800">
                           {day}
                         </h3>
-                        <p className="text-sm text-slate-500">
-                          {scheduleByDay[day].length}{" "}
-                          {scheduleByDay[day].length === 1
-                            ? "training"
-                            : "trainingen"}
-                        </p>
                       </div>
                     </div>
 
@@ -281,9 +267,10 @@ export default function TrainingsschemaPage() {
             className="mt-12 sm:mt-16 bg-white rounded-3xl shadow-xl p-8 sm:p-10 lg:p-12 text-center"
           >
             <p className="text-slate-700 text-lg sm:text-xl leading-relaxed max-w-3xl mx-auto">
-              Er zijn ook trainingsmogelijkheden bij{" "}
-              <strong className="text-slate-900">Zwemvereniging Patrick</strong>{" "}
-              in Echt
+              We zijn een startgemeenschap en daarom zijn er ook
+              trainingsmogelijkheden bij
+              <br />
+              <strong className="text-slate-900">zv-patrick</strong> in Echt
             </p>
             <a
               href="https://www.zv-patrick.nl"

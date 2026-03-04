@@ -92,8 +92,8 @@ export function Contact() {
           </h2>
 
           <p className="text-base sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed px-4">
-            Klaar om te duiken? Neem contact met ons op en word onderdeel van
-            onze zwemfamilie en zwem 4 keer gratis mee!
+            Neem contact met ons op, zwem 4 keer gratis mee en word onderdeel
+            van onze zwemfamilie!
           </p>
         </motion.div>
 

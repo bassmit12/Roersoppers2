@@ -1,22 +1,16 @@
 "use client";
 
 import Link from "next/link";
-import {
-  Facebook,
-  Instagram,
-  Twitter,
-  Youtube,
-  MapPin,
-  Phone,
-  Mail,
-} from "lucide-react";
+import { Facebook, Instagram, MapPin, Phone, Mail } from "lucide-react";
 
 const navigation = [
-  { name: "Home", href: "#home" },
-  { name: "Over Ons", href: "#about" },
-  { name: "Team", href: "#team" },
-  { name: "Nieuws", href: "#events" },
-  { name: "Contact", href: "#contact" },
+  { name: "Home", href: "/" },
+  { name: "Zwemgroepen", href: "/zwemgroepen" },
+  { name: "Trainingsschema", href: "/trainingsschema" },
+  { name: "Over Ons", href: "/informatie/over-ons" },
+  { name: "Startgemeenschap", href: "/informatie/startgemeenschap" },
+  { name: "Aan / Afmelden", href: "/informatie/aanmelden" },
+  { name: "Code Blauw", href: "/informatie/code-blauw" },
 ];
 
 const socialLinks = [
@@ -30,8 +24,6 @@ const socialLinks = [
     icon: Instagram,
     href: "https://www.instagram.com/patrickderoersopperssg/",
   },
-  { name: "Twitter", icon: Twitter, href: "#" },
-  { name: "YouTube", icon: Youtube, href: "#" },
 ];
 
 export function Footer() {
@@ -119,7 +111,12 @@ export function Footer() {
 
                 <div className="flex items-center space-x-2 sm:space-x-3 group hover:text-white transition-colors duration-300">
                   <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-[var(--light-aqua)] group-hover:scale-110 transition-transform duration-300 flex-shrink-0" />
-                  <p>0475-533635</p>
+                  <a
+                    href="tel:06128447980"
+                    className="underline hover:text-[var(--light-aqua)] focus:outline-none focus:ring-2 focus:ring-[var(--light-aqua)] rounded"
+                  >
+                    06-128447980
+                  </a>
                 </div>
 
                 <div className="flex items-center space-x-2 sm:space-x-3 group hover:text-white transition-colors duration-300">
@@ -161,25 +158,20 @@ export function Footer() {
               © 2025 De Roersoppers. Alle rechten voorbehouden.
             </p>
             <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-6 text-xs sm:text-sm">
-              <Link
-                href="#"
+              <a
+                href="/Privacy-policy-Roersoppers.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-white/50 hover:text-[var(--light-aqua)] transition-all duration-300 hover:translate-y-[-2px]"
               >
                 Privacy Beleid
-              </Link>
+              </a>
               <span className="text-white/20 hidden sm:inline">•</span>
               <Link
-                href="#"
+                href="/informatie/code-blauw"
                 className="text-white/50 hover:text-[var(--light-aqua)] transition-all duration-300 hover:translate-y-[-2px]"
               >
                 Algemene Voorwaarden
-              </Link>
-              <span className="text-white/20 hidden sm:inline">•</span>
-              <Link
-                href="#"
-                className="text-white/50 hover:text-[var(--light-aqua)] transition-all duration-300 hover:translate-y-[-2px]"
-              >
-                Cookie Beleid
               </Link>
             </div>
           </div>

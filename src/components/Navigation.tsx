@@ -31,12 +31,15 @@ const navigation: NavigationItem[] = [
     dropdown: [
       { name: "Zwemgroepen", href: "/zwemgroepen" },
       { name: "Trainingsschema", href: "/trainingsschema" },
+      { name: "BorstCrawl Training", href: "/zwemmen/borstcrawl-training" },
     ],
   },
   {
     name: "Informatie",
     href: "#",
     dropdown: [
+      { name: "Over Ons", href: "/informatie/over-ons" },
+      { name: "Startgemeenschap", href: "/informatie/startgemeenschap" },
       { name: "Aan / Afmelden", href: "/informatie/aanmelden" },
       { name: "Code Blauw", href: "/informatie/code-blauw" },
     ],
@@ -74,7 +77,7 @@ export function Navigation() {
         "fixed top-0 w-full z-50 transition-all duration-500",
         isScrolled || !isHomePage
           ? "bg-white/98 backdrop-blur-md shadow-lg"
-          : "bg-gradient-to-b from-black/30 to-transparent backdrop-blur-sm"
+          : "bg-gradient-to-b from-black/30 to-transparent backdrop-blur-sm",
       )}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -96,7 +99,7 @@ export function Navigation() {
                 "text-xl font-bold transition-colors duration-500",
                 isScrolled || !isHomePage
                   ? "text-[var(--primary-blue)]"
-                  : "text-white"
+                  : "text-white",
               )}
             >
               De Roersoppers
@@ -115,7 +118,7 @@ export function Navigation() {
                           "flex items-center px-3 py-2 text-sm font-medium transition-all duration-500",
                           isScrolled || !isHomePage
                             ? "text-gray-900 hover:text-[var(--aqua)]"
-                            : "text-white/90 hover:text-white"
+                            : "text-white/90 hover:text-white",
                         )}
                         onMouseEnter={() => setActiveDropdown(item.name)}
                       >
@@ -127,7 +130,7 @@ export function Navigation() {
                           "absolute left-0 mt-0 w-48 bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 transition-all duration-200 z-50",
                           activeDropdown === item.name
                             ? "opacity-100 visible translate-y-0"
-                            : "opacity-0 invisible -translate-y-2 pointer-events-none"
+                            : "opacity-0 invisible -translate-y-2 pointer-events-none",
                         )}
                         onMouseEnter={() => setActiveDropdown(item.name)}
                         onMouseLeave={() => setActiveDropdown(null)}
@@ -153,7 +156,7 @@ export function Navigation() {
                         "relative px-3 py-2 text-sm font-medium transition-all duration-500 group",
                         isScrolled || !isHomePage
                           ? "text-gray-900 hover:text-[var(--aqua)]"
-                          : "text-white/90 hover:text-white"
+                          : "text-white/90 hover:text-white",
                       )}
                       onClick={handleLinkClick}
                     >
@@ -174,7 +177,7 @@ export function Navigation() {
                 "inline-flex items-center justify-center p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-inset focus:ring-[var(--aqua)] transition-colors duration-500",
                 isScrolled || !isHomePage
                   ? "text-gray-400 hover:text-gray-500 hover:bg-gray-100"
-                  : "text-white/80 hover:text-white hover:bg-white/10"
+                  : "text-white/80 hover:text-white hover:bg-white/10",
               )}
             >
               {isOpen ? (
@@ -192,7 +195,7 @@ export function Navigation() {
             "md:hidden transition-all duration-300 ease-in-out",
             isOpen
               ? "max-h-[600px] opacity-100"
-              : "max-h-0 opacity-0 overflow-hidden"
+              : "max-h-0 opacity-0 overflow-hidden",
           )}
         >
           <div className="px-2 pt-2 pb-3 space-y-1 bg-white border-t border-gray-200 max-h-[calc(100vh-80px)] overflow-y-auto">
@@ -208,7 +211,7 @@ export function Navigation() {
                       <ChevronDown
                         className={cn(
                           "h-4 w-4 transition-transform duration-200",
-                          activeDropdown === item.name ? "rotate-180" : ""
+                          activeDropdown === item.name ? "rotate-180" : "",
                         )}
                       />
                     </button>
@@ -217,7 +220,7 @@ export function Navigation() {
                         "ml-4 space-y-1 overflow-hidden transition-all duration-200",
                         activeDropdown === item.name
                           ? "max-h-40 opacity-100"
-                          : "max-h-0 opacity-0"
+                          : "max-h-0 opacity-0",
                       )}
                     >
                       {item.dropdown.map((dropItem) => (

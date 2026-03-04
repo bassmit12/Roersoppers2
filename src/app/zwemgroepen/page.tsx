@@ -31,7 +31,7 @@ export default function ZwemgroepenPage() {
       description:
         "Heb jij een passie voor zwemmen en wil je jezelf écht uitdagen? Sluit je dan aan bij dit team, waar je traint op techniek, snelheid en conditie, met als doel deel te nemen aan wedstrijden. Als lid van De Roersoppers vertegenwoordig je ons in de districtscompetitie, kampioenschappen en invitatiewedstrijden.",
       details:
-        "Onze trainingen zijn afgestemd op het wedstrijdschema en bestaan uit techniek-, duur- en sprinttrainingen. Om écht beter te worden, verwachten we dat je minimaal drie keer per week traint. Elk seizoen zwem je zo'n 10 tot 12 wedstrijden, waarbij de competitiewedstrijden het absolute hoogtepunt vormen. Samen gaan we voor de beste prestaties!",
+        "Onze trainingen zijn afgestemd op het wedstrijdschema en bestaan uit techniek-, duur- en sprinttrainingen. Elk seizoen zwem je zo'n 10 tot 12 wedstrijden, waarbij de competitiewedstrijden het absolute hoogtepunt vormen. Samen gaan we voor de beste prestaties!",
     },
     {
       title: "Wedstrijdmasters",

@@ -231,7 +231,7 @@ export default function AanmeldenPage() {
                   <div className="grid md:grid-cols-2 gap-6 pt-4">
                     <div className="bg-gradient-to-br from-cyan-50 to-blue-50 rounded-xl p-6">
                       <h4 className="text-lg font-bold text-slate-900 mb-3">
-                        📅 Kwartalen
+                        Kwartalen
                       </h4>
                       <ul className="space-y-2 text-slate-700">
                         <li>• September - November</li>
@@ -243,7 +243,7 @@ export default function AanmeldenPage() {
 
                     <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl p-6">
                       <h4 className="text-lg font-bold text-slate-900 mb-3">
-                        💶 Tarieven
+                        Tarieven
                       </h4>
                       <p className="text-slate-700 leading-relaxed">
                         Voor actuele tarieven kunt u contact opnemen met het

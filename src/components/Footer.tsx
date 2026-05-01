@@ -17,7 +17,7 @@ const socialLinks = [
   {
     name: "Facebook",
     icon: Facebook,
-    href: "https://www.facebook.com/zvderoersoppers/",
+    href: "https://www.facebook.com/profile.php?id=61578718554072",
   },
   {
     name: "Instagram",
@@ -105,7 +105,9 @@ export function Footer() {
                 <div className="flex items-start space-x-2 sm:space-x-3 group hover:text-white transition-colors duration-300">
                   <MapPin className="w-4 h-4 sm:w-5 sm:h-5 text-[var(--light-aqua)] mt-0.5 group-hover:scale-110 transition-transform duration-300 flex-shrink-0" />
                   <div>
-                    <p className="leading-relaxed">Melick, Limburg</p>
+                    <p className="leading-relaxed">
+                      Apollolaan 2, 6074 EH Melick
+                    </p>
                   </div>
                 </div>
 

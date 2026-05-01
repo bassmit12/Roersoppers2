@@ -218,7 +218,7 @@ export function Navigation() {
                       className={cn(
                         "ml-4 space-y-1 overflow-hidden transition-all duration-200",
                         activeDropdown === item.name
-                          ? "max-h-40 opacity-100"
+                          ? "max-h-52 opacity-100"
                           : "max-h-0 opacity-0",
                       )}
                     >

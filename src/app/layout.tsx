@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 
@@ -14,13 +14,18 @@ export const metadata: Metadata = {
     "Al meer dan 40 jaar de gezelligste zwemvereniging van Melick. Van beginners tot wedstrijdzwemmers, iedereen is welkom bij De Roersoppers!",
   keywords:
     "zwemmen, zwemvereniging, Melick, zwemles, wedstrijdzwemmen, junioren, senioren, Roersoppers",
-  viewport: "width=device-width, initial-scale=1, maximum-scale=5",
-  themeColor: "#1e40af",
   icons: {
     icon: "/logo.ico",
     shortcut: "/logo.ico",
     apple: "/logo.ico",
   },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: "#1e40af",
 };
 
 export default function RootLayout({

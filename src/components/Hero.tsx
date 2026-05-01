@@ -80,7 +80,7 @@ export function Hero() {
                     transition={{ delay: 1 }}
                     className="col-span-2 sm:col-span-1"
                   >
-                    <a href="/informatie" className="block">
+                    <a href="/informatie/aanmelden" className="block">
                       <Button
                         size="lg"
                         className="w-full lg:w-auto bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-700 hover:to-cyan-600 text-white px-4 sm:px-8 py-3 sm:py-4 rounded-xl shadow-xl hover:shadow-2xl transition-all duration-300 group text-sm sm:text-base"
@@ -120,7 +120,7 @@ export function Hero() {
                     className="col-span-1"
                   >
                     <a
-                      href="https://www.facebook.com/zvderoersoppers"
+                      href="https://www.facebook.com/profile.php?id=61578718554072"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center justify-center lg:justify-start gap-2 text-white/90 hover:text-white transition-colors drop-shadow-lg group"

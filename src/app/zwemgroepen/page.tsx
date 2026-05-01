@@ -49,7 +49,7 @@ export default function ZwemgroepenPage() {
     },
     {
       title: "Masters 2",
-      image: "/images/masters_2.jpg",
+      image: "/images/masters_2.png",
       color: "from-rose-500 to-red-500",
       description:
         "Zwemmen is een gezonde sport ook al ben je een jaartje ouder. In deze groep wordt er niet alleen flink gezwommen, maar ook veel gelachen. De banen zijn verdeeld op niveau, zodat iedereen in zijn eigen tempo kan trainen. En ja, de kaakspieren krijgen hier net zo'n goede workout als de arm- en beenspieren – gezelligheid gegarandeerd!",

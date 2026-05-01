@@ -128,8 +128,8 @@ export default function AanmeldenPage() {
 
                 <div className="bg-amber-50 border-l-4 border-amber-500 rounded-xl p-6">
                   <p className="text-slate-700 leading-relaxed">
-                    <strong>Let op:</strong> aanmelding is voor minimaal één jaar
-                    en alleen geldig met een ingevulde incasso-machtiging.
+                    <strong>Let op:</strong> aanmelding is voor minimaal één
+                    jaar en alleen geldig met een ingevulde incasso-machtiging.
                   </p>
                 </div>
               </div>
@@ -242,13 +242,6 @@ export default function AanmeldenPage() {
                       <span>
                         Opzeggen vóór <strong>1 november</strong> óf{" "}
                         <strong>1 juli</strong>.
-                      </span>
-                    </li>
-                    <li className="flex items-start gap-2">
-                      <span className="text-cyan-500 mt-1">•</span>
-                      <span>
-                        <strong>Let op:</strong> Masters 2 en Studenten opzeggen
-                        vóór <strong>1 november</strong> (zij betalen per jaar).
                       </span>
                     </li>
                   </ul>
@@ -418,9 +411,7 @@ export default function AanmeldenPage() {
                           <td className="px-4 py-3 font-semibold">€254</td>
                         </tr>
                         <tr className="hover:bg-blue-50/50 transition-colors">
-                          <td className="px-4 py-3 font-medium">
-                            Jongeren Wedstrijd
-                          </td>
+                          <td className="px-4 py-3 font-medium">Selectie</td>
                           <td className="px-4 py-3">Max. 4x per week</td>
                           <td className="px-4 py-3 font-semibold">€290</td>
                         </tr>
@@ -475,8 +466,7 @@ export default function AanmeldenPage() {
                     <li className="flex items-start gap-2">
                       <span className="text-cyan-500 mt-1">•</span>
                       <span>
-                        Startvergunning t/m 12 jaar:{" "}
-                        <strong>+/- €2,50</strong>
+                        Startvergunning t/m 12 jaar: <strong>+/- €2,50</strong>
                       </span>
                     </li>
                     <li className="flex items-start gap-2">

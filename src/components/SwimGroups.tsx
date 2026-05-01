@@ -39,7 +39,13 @@ export function SwimGroups() {
 
           <p className="text-base sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed px-4">
             Voor elke leeftijd en elk niveau hebben we de perfecte groep waar je
-            je thuis zult voelen
+            je thuis zult voelen.{" "}
+            <a
+              href="/zwemgroepen"
+              className="text-cyan-600 hover:text-cyan-700 underline font-semibold"
+            >
+              Check ze hier!
+            </a>
           </p>
         </motion.div>
 

@@ -20,7 +20,7 @@ const contactInfo: ContactInfo[] = [
   {
     icon: <Phone className="w-6 h-6" />,
     title: "Telefoon",
-    details: ["06-128447980"],
+    details: ["06-12847980"],
   },
   {
     icon: <Mail className="w-6 h-6" />,

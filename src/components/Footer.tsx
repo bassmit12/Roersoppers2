@@ -117,7 +117,7 @@ export function Footer() {
                     href="tel:06128447980"
                     className="underline hover:text-[var(--light-aqua)] focus:outline-none focus:ring-2 focus:ring-[var(--light-aqua)] rounded"
                   >
-                    06-128447980
+                    06-12847980
                   </a>
                 </div>
 

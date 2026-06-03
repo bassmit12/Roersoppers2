@@ -114,7 +114,7 @@ export function Footer() {
                 <div className="flex items-center space-x-2 sm:space-x-3 group hover:text-white transition-colors duration-300">
                   <Phone className="w-4 h-4 sm:w-5 sm:h-5 text-[var(--light-aqua)] group-hover:scale-110 transition-transform duration-300 flex-shrink-0" />
                   <a
-                    href="tel:06128447980"
+                    href="tel:0612847980"
                     className="underline hover:text-[var(--light-aqua)] focus:outline-none focus:ring-2 focus:ring-[var(--light-aqua)] rounded"
                   >
                     06-12847980

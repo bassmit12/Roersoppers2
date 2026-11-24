@@ -33,11 +33,43 @@ A new page only needs a URL path, such as `informatie/nieuws`. The page blocks *
 
 Pages are generated statically. Saving anything in the admin revalidates the site, so changes show up right away.
 
-## Deployment
+## Deployment (Vercel)
 
-- **Database:** SQLite via `@payloadcms/db-sqlite`. Locally this is the `roersoppers.db` file. On serverless hosts
-  such as Vercel, use a hosted libsql database (e.g. Turso) by setting `DATABASE_URL=libsql://…` and `DATABASE_AUTH_TOKEN`.
-  For production, create migrations with `npm run payload migrate:create` and run them with `npm run payload migrate`.
-- **Uploads:** stored in `./media` by default. Set `BLOB_READ_WRITE_TOKEN` to store them in Vercel Blob.
-- **Instagram:** `/api/instagram-posts` fetches posts through Apify (`APIFY_TOKEN`) and caches them for a week.
-  It only fetches the account set under Homepage → Instagram. Logged-in editors can force a refresh with `?refresh=1`.
+`vercel.json` makes Vercel run `npm run ci`, which applies database migrations and then builds.
+
+Environment variables in Vercel:
+
+| Variable | Value |
+| --- | --- |
+| `DATABASE_URL` | Turso URL, `libsql://…` |
+| `DATABASE_AUTH_TOKEN` | Turso token |
+| `PAYLOAD_SECRET` | Long random string (`openssl rand -hex 32`) |
+| `BLOB_READ_WRITE_TOKEN` | Added automatically when you create a Blob store under *Storage* |
+| `APIFY_TOKEN` | For the Instagram feed |
+
+Uploads go straight from the browser to Vercel Blob, so photos larger than Vercel's 4.5 MB request limit work.
+
+### Changing the schema
+
+Locally, Payload updates the SQLite schema automatically. After changing collections, globals or blocks,
+create a migration and commit it; the next deploy applies it:
+
+```bash
+npm run payload migrate:create <name>
+```
+
+### Filling a new production database
+
+Put the production values in `.env.turso.local` (gitignored), then run the seed against it:
+
+```bash
+set -a && . ./.env.turso.local && set +a && npm run seed
+```
+
+`.env.turso.local` needs `DATABASE_URL`, `DATABASE_AUTH_TOKEN` and `BLOB_READ_WRITE_TOKEN`, so the seeded
+photos and video are uploaded to Vercel Blob instead of the local `./media` folder.
+
+### Instagram
+
+`/api/instagram-posts` fetches posts through Apify (`APIFY_TOKEN`) and caches them for a week. It only fetches
+the account set under Homepage → Instagram. Logged-in editors can force a refresh with `?refresh=1`.

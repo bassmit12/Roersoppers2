@@ -393,6 +393,7 @@ export interface Media {
    * Korte beschrijving van de afbeelding voor schermlezers.
    */
   alt: string;
+  _objectKey?: string | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -994,6 +995,7 @@ export interface TrainingSessionsSelect<T extends boolean = true> {
  */
 export interface MediaSelect<T extends boolean = true> {
   alt?: T;
+  _objectKey?: T;
   updatedAt?: T;
   createdAt?: T;
   url?: T;

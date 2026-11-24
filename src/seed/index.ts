@@ -14,7 +14,8 @@ import type { Page, SwimGroup } from '../payload-types'
 
 const dirname = path.dirname(fileURLToPath(import.meta.url))
 const assetsDir = path.resolve(dirname, '../../seed/assets')
-const context = { disableRevalidate: true }
+// A fresh object per call: Payload plugins keep per-request state on `context`
+const context = () => ({ disableRevalidate: true })
 
 const payload = await getPayload({ config })
 const force = process.env.SEED_FORCE === 'true'
@@ -28,9 +29,39 @@ if (totalDocs > 0 && !force) {
 }
 
 if (force) {
+  // The homepage's photo lists require an image, so they must let go of the
+  // media before it can be deleted. They are filled again further down.
+  const home = await payload.findGlobal({ slug: 'home', depth: 0 })
+  if (home.hero?.title) {
+    await payload.updateGlobal({
+      slug: 'home',
+      data: {
+        hero: { video: null },
+        about: { photos: [] },
+        groups: { items: [] },
+        pool: { photos: [] },
+        events: { fallbackPosts: [] },
+      },
+      context: context(),
+    })
+  }
+
   const slugs: CollectionSlug[] = ['pages', 'training-sessions', 'swim-groups', 'media']
   for (const collection of slugs) {
-    await payload.delete({ collection, where: { id: { exists: true } }, context })
+    // Bulk deletes work in batches, so repeat until the collection is empty
+    let remaining = (await payload.count({ collection })).totalDocs
+    while (remaining > 0) {
+      const { errors } = await payload.delete({
+        collection,
+        where: { id: { exists: true } },
+        context: context(),
+      })
+      const left = (await payload.count({ collection })).totalDocs
+      if (left >= remaining) {
+        throw new Error(`Could not delete ${collection}: ${errors[0]?.message ?? 'unknown error'}`)
+      }
+      remaining = left
+    }
   }
 }
 
@@ -68,7 +99,7 @@ for (const [file, alt] of Object.entries(mediaFiles)) {
     collection: 'media',
     data: { alt },
     filePath: path.join(assetsDir, file),
-    context,
+    context: context(),
   })
   media[file] = doc.id
   payload.logger.info(`Uploaded ${file}`)
@@ -129,7 +160,7 @@ for (const [order, group] of swimGroups.entries()) {
   const doc = await payload.create({
     collection: 'swim-groups',
     data: { ...group, order },
-    context,
+    context: context(),
   })
   groups[group.title] = doc.id
 }
@@ -161,7 +192,7 @@ for (const training of trainings) {
   await payload.create({
     collection: 'training-sessions',
     data: { ...training, groups: [...training.groups] },
-    context,
+    context: context(),
   })
 }
 
@@ -696,7 +727,7 @@ Verder kan de vertrouwenspersoon doorverwijzen naar andere instanties zoals bijv
 ]
 
 for (const data of pages) {
-  await payload.create({ collection: 'pages', data, context })
+  await payload.create({ collection: 'pages', data, context: context() })
   payload.logger.info(`Created page /${data.slug}`)
 }
 
@@ -704,7 +735,7 @@ for (const data of pages) {
 
 await payload.updateGlobal({
   slug: 'home',
-  context,
+  context: context(),
   data: {
     hero: {
       title: 'De Roersoppers',
@@ -854,7 +885,7 @@ await payload.updateGlobal({
 
 await payload.updateGlobal({
   slug: 'navigation',
-  context,
+  context: context(),
   data: {
     items: [
       {
@@ -897,7 +928,7 @@ const privacyPolicyUrl = privacyPolicy.url ?? '/'
 
 await payload.updateGlobal({
   slug: 'site-settings',
-  context,
+  context: context(),
   data: {
     siteName: 'De Roersoppers',
     meta: {

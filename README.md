@@ -55,8 +55,11 @@ Locally, Payload updates the SQLite schema automatically. After changing collect
 create a migration and commit it; the next deploy applies it:
 
 ```bash
-npm run payload migrate:create <name>
+set -a && . ./.env.turso.local && set +a && NODE_ENV=production npm run payload migrate:create <name>
 ```
+
+Load the production settings first: the Vercel Blob plugin only adds its database column when
+`BLOB_READ_WRITE_TOKEN` is set, so a migration created without it would drop that column.
 
 ### Filling a new production database
 

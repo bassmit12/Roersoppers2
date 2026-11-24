@@ -1,0 +1,319 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+
+  /* Water Theme Colors */
+  --primary-blue: #1e40af;
+  --light-blue: #3b82f6;
+  --aqua: #06b6d4;
+  --teal: #0d9488;
+  --light-aqua: #67e8f9;
+  --dark-blue: #1e3a8a;
+  --text-dark: #1f2937;
+  --text-light: #6b7280;
+  --light-gray: #f8fafc;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  /* Water Theme Custom Colors */
+  --color-primary-blue: var(--primary-blue);
+  --color-light-blue: var(--light-blue);
+  --color-aqua: var(--aqua);
+  --color-teal: var(--teal);
+  --color-light-aqua: var(--light-aqua);
+  --color-dark-blue: var(--dark-blue);
+  --color-text-dark: var(--text-dark);
+  --color-text-light: var(--text-light);
+  --color-light-gray: var(--light-gray);
+  --font-sans: var(--font-poppins), system-ui, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Water Animation Keyframes */
+@keyframes wave {
+  0% {
+    transform: translateX(0) translateY(0);
+  }
+  25% {
+    transform: translateX(-25px) translateY(-5px);
+  }
+  50% {
+    transform: translateX(-50px) translateY(0);
+  }
+  75% {
+    transform: translateX(-25px) translateY(5px);
+  }
+  100% {
+    transform: translateX(0) translateY(0);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px) translateX(0px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(20px);
+    opacity: 0;
+  }
+}
+
+@keyframes shimmer {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+@keyframes wave-flow {
+  0% {
+    transform: translateX(0) scaleY(1);
+  }
+  50% {
+    transform: translateX(-50px) scaleY(1.1);
+  }
+  100% {
+    transform: translateX(-100px) scaleY(1);
+  }
+}
+
+/* Utility Classes */
+.animate-wave {
+  animation: wave 8s ease-in-out infinite;
+}
+
+.animate-wave-flow {
+  animation: wave-flow 15s linear infinite;
+}
+
+.animate-float {
+  animation: float 15s ease-in-out infinite;
+}
+
+.animate-shimmer {
+  background-size: 200% 200%;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+.water-gradient {
+  background: linear-gradient(
+    135deg,
+    var(--aqua),
+    var(--light-blue),
+    var(--teal)
+  );
+}
+
+.text-gradient {
+  background: linear-gradient(45deg, var(--light-aqua), var(--primary-blue));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Smooth transitions */
+* {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--light-gray);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--aqua);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--teal);
+}
+
+/* Mobile-specific optimizations */
+@media (max-width: 768px) {
+  /* Prevent horizontal scroll on mobile */
+  html,
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
+
+  /* Better touch targets for mobile */
+  button,
+  a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Optimize scrollbar for mobile */
+  ::-webkit-scrollbar {
+    width: 4px;
+  }
+
+  /* Reduce motion for better mobile performance */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* Improve touch feedback */
+@media (hover: none) and (pointer: coarse) {
+  button:active,
+  a:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+  }
+}
+
+/* Prevent text size adjustment on mobile devices */
+html {
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+/* Optimize font rendering */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Rich text from the CMS, layered so utility classes can override it */
+@layer components {
+  .rich-text > * + * {
+    margin-top: 1rem;
+  }
+
+  .rich-text a {
+    color: #2563eb;
+    font-weight: 600;
+    text-decoration: underline;
+  }
+
+  .rich-text a:hover {
+    color: #1d4ed8;
+  }
+
+  .rich-text strong {
+    font-weight: 700;
+    color: #0f172a;
+  }
+
+  .rich-text h2,
+  .rich-text h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0f172a;
+  }
+
+  .rich-text h4 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #0f172a;
+  }
+
+  .rich-text ul,
+  .rich-text ol {
+    margin-left: 1rem;
+  }
+
+  .rich-text li + li {
+    margin-top: 0.5rem;
+  }
+
+  .rich-text ul > li {
+    position: relative;
+    padding-left: 1.5rem;
+    list-style: none;
+  }
+
+  .rich-text ul > li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    font-weight: 700;
+    color: #0891b2;
+  }
+
+  .rich-text ol {
+    list-style: decimal;
+    padding-left: 1.25rem;
+  }
+
+  .rich-text[data-list-style='check'] ul {
+    margin-left: 0;
+  }
+
+  .rich-text[data-list-style='check'] ul > li {
+    padding-left: 2.25rem;
+  }
+
+  .rich-text[data-list-style='check'] ul > li::before {
+    content: '';
+    top: 0.1rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: currentColor;
+    color: var(--check-color, #2563eb);
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21.801 10A10 10 0 1 1 17 3.335'/%3E%3Cpath d='m9 11 3 3L22 4'/%3E%3C/svg%3E")
+      center / contain no-repeat;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21.801 10A10 10 0 1 1 17 3.335'/%3E%3Cpath d='m9 11 3 3L22 4'/%3E%3C/svg%3E")
+      center / contain no-repeat;
+  }
+
+  .rich-text-inverted a,
+  .rich-text-inverted strong {
+    color: #fff;
+  }
+
+  .rich-text-inverted a:hover {
+    color: #dbeafe;
+  }
+}

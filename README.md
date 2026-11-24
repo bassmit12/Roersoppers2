@@ -1,36 +1,43 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# De Roersoppers – Payload CMS
 
-## Getting Started
+The Roersoppers website (a rebuild of `Roersoppers2`) with [Payload CMS](https://payloadcms.com) built in.
+Payload runs inside the same Next.js app: the site is at `/` and the admin panel is at `/admin`.
 
-First, run the development server:
+## Getting started
 
 ```bash
+cp .env.example .env     # fill in PAYLOAD_SECRET (and APIFY_TOKEN for the Instagram feed)
+npm install
+npm run seed             # fills an empty database with the content of the original site
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000/admin and create the first admin user.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+`npm run seed:fresh` deletes all pages, swim groups, trainings and media and seeds them again.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## What editors can manage
 
-## Learn More
+| In the admin                  | What it controls                                                          |
+| ----------------------------- | ------------------------------------------------------------------------- |
+| **Website → Homepage**        | Hero (video, text, buttons), about, groups, pool, Instagram and contact sections |
+| **Website → Navigatie**       | Menu items and dropdowns                                                  |
+| **Website → Site-instellingen** | Name, SEO and footer (links, contact details, social media)             |
+| **Inhoud → Pagina's**         | All other pages, built from blocks (cards, callouts, tables, downloads, CTAs) |
+| **Zwemmen → Zwemgroepen**     | Groups on `/zwemgroepen` (sorted by the *Volgorde* field)                 |
+| **Zwemmen → Trainingen**      | The weekly schedule on `/trainingsschema`                                 |
+| **Formulieren → Contactberichten** | Messages sent with the contact form on the homepage                  |
 
-To learn more about Next.js, take a look at the following resources:
+A new page only needs a URL path, such as `informatie/nieuws`. The page blocks *Zwemgroepen overzicht* and
+*Trainingsschema* pull their content from the collections above, so they can be placed on any page.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Pages are generated statically. Saving anything in the admin revalidates the site, so changes show up right away.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deployment
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Database:** SQLite via `@payloadcms/db-sqlite`. Locally this is the `roersoppers.db` file. On serverless hosts
+  such as Vercel, use a hosted libsql database (e.g. Turso) by setting `DATABASE_URL=libsql://…` and `DATABASE_AUTH_TOKEN`.
+  For production, create migrations with `npm run payload migrate:create` and run them with `npm run payload migrate`.
+- **Uploads:** stored in `./media` by default. Set `BLOB_READ_WRITE_TOKEN` to store them in Vercel Blob.
+- **Instagram:** `/api/instagram-posts` fetches posts through Apify (`APIFY_TOKEN`) and caches them for a week.
+  It only fetches the account set under Homepage → Instagram. Logged-in editors can force a refresh with `?refresh=1`.

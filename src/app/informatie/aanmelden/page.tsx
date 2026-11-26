@@ -236,12 +236,22 @@ export default function AanmeldenPage() {
                   <h3 className="text-xl font-bold text-slate-900">
                     Houd rekening met deze deadlines:
                   </h3>
+                  <p className="text-slate-700 text-lg">
+                    Opzeggen kan twee keer per jaar:
+                  </p>
                   <ul className="space-y-2 text-slate-700 text-lg">
                     <li className="flex items-start gap-2">
                       <span className="text-cyan-500 mt-1">•</span>
                       <span>
-                        Opzeggen vóór <strong>1 november</strong> óf{" "}
-                        <strong>1 juli</strong>.
+                        Per <strong>1 juli</strong>, opzeggen voor{" "}
+                        <strong>1 juni</strong>
+                      </span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <span className="text-cyan-500 mt-1">•</span>
+                      <span>
+                        Per <strong>1 januari</strong>, opzeggen voor{" "}
+                        <strong>1 december</strong>
                       </span>
                     </li>
                   </ul>

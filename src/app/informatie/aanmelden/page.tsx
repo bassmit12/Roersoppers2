@@ -329,26 +329,26 @@ export default function AanmeldenPage() {
                         <tr className="border-b border-slate-100 hover:bg-cyan-50/50 transition-colors">
                           <td className="px-4 py-3 font-medium">Masters 2</td>
                           <td className="px-4 py-3">1x per week</td>
-                          <td className="px-4 py-3 font-semibold">€130</td>
+                          <td className="px-4 py-3 font-semibold">€135</td>
                         </tr>
                         <tr className="border-b border-slate-100 hover:bg-cyan-50/50 transition-colors">
                           <td className="px-4 py-3 font-medium">Masters 1</td>
                           <td className="px-4 py-3">Max. 3x per week</td>
-                          <td className="px-4 py-3 font-semibold">€217</td>
+                          <td className="px-4 py-3 font-semibold">€230</td>
                         </tr>
                         <tr className="border-b border-slate-100 hover:bg-cyan-50/50 transition-colors">
                           <td className="px-4 py-3 font-medium">
                             Jeugd Recreatief
                           </td>
                           <td className="px-4 py-3">Max. 3x per week</td>
-                          <td className="px-4 py-3 font-semibold">€254</td>
+                          <td className="px-4 py-3 font-semibold">€265</td>
                         </tr>
                         <tr className="hover:bg-cyan-50/50 transition-colors">
                           <td className="px-4 py-3 font-medium">
                             Studenten (uitwonend)**
                           </td>
                           <td className="px-4 py-3">Max. 1x per week</td>
-                          <td className="px-4 py-3 font-semibold">€90</td>
+                          <td className="px-4 py-3 font-semibold">€95</td>
                         </tr>
                       </tbody>
                     </table>
@@ -401,19 +401,19 @@ export default function AanmeldenPage() {
                             Wedstrijdmasters
                           </td>
                           <td className="px-4 py-3">Max. 4x per week</td>
-                          <td className="px-4 py-3 font-semibold">€290</td>
+                          <td className="px-4 py-3 font-semibold">€310</td>
                         </tr>
                         <tr className="border-b border-slate-100 hover:bg-blue-50/50 transition-colors">
                           <td className="px-4 py-3 font-medium">
                             Jeugd Wedstrijd
                           </td>
                           <td className="px-4 py-3">Max. 3x per week</td>
-                          <td className="px-4 py-3 font-semibold">€254</td>
+                          <td className="px-4 py-3 font-semibold">€265</td>
                         </tr>
                         <tr className="hover:bg-blue-50/50 transition-colors">
                           <td className="px-4 py-3 font-medium">Selectie</td>
                           <td className="px-4 py-3">Max. 4x per week</td>
-                          <td className="px-4 py-3 font-semibold">€290</td>
+                          <td className="px-4 py-3 font-semibold">€310</td>
                         </tr>
                       </tbody>
                     </table>

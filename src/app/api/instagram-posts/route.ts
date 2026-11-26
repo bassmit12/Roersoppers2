@@ -7,7 +7,11 @@ declare global {
 }
 
 // Simple in-memory cache (per server instance)
-// Caches posts per username for 7 days
+// Instagram accounts whose posts are combined into one feed, newest first
+const INSTAGRAM_ACCOUNTS = ["patrickderoersopperssg", "zv.deroersoppers"];
+const ACCOUNTS_CACHE_KEY = `accounts:${INSTAGRAM_ACCOUNTS.join(",")}`;
+
+// Caches the combined posts for 7 days
 const WEEK_MS = 7 * 24 * 60 * 60 * 1000;
 
 interface NormalizedPost {
@@ -146,7 +150,7 @@ export async function GET(request: NextRequest) {
     );
     const purgeParam = searchParams.get("purge");
 
-    const cacheKey = `user:${username}`;
+    const cacheKey = ACCOUNTS_CACHE_KEY;
     const now = Date.now();
 
     // Purge cache if requested
@@ -186,9 +190,11 @@ export async function GET(request: NextRequest) {
     const client = new ApifyClient({ token });
 
     const input = {
-      directUrls: [`https://www.instagram.com/${username}/`],
+      directUrls: INSTAGRAM_ACCOUNTS.map(
+        (account) => `https://www.instagram.com/${account}/`
+      ),
       resultsType: "posts",
-      resultsLimit: 6, // fetch enough then slice
+      resultsLimit: 3, // per account
       addParentData: false,
     } as const;
 
@@ -225,11 +231,7 @@ export async function GET(request: NextRequest) {
     try {
       const searchParams = request.nextUrl.searchParams;
       const limit = Math.max(1, parseInt(searchParams.get("limit") || "3", 10));
-      const username = (
-        searchParams.get("username") || "patrickderoersopperssg"
-      ).replace(/^@/, "");
-      const cacheKey = `user:${username}`;
-      const cached = globalCache.get(cacheKey);
+      const cached = globalCache.get(ACCOUNTS_CACHE_KEY);
       if (cached && Array.isArray(cached.data) && cached.data.length) {
         const body = cached.data.slice(0, limit);
         return new NextResponse(JSON.stringify(body), {

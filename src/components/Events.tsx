@@ -52,7 +52,7 @@ export function Events() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mb-12 sm:mb-16"
         >
-          <InstagramFeed username="patrickderoersopperssg" count={3} />
+          <InstagramFeed username="patrickderoersopperssg" count={6} />
         </motion.div>
 
         {/* Instagram Follow Button */}

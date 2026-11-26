@@ -188,7 +188,7 @@ export async function GET(request: NextRequest) {
     const input = {
       directUrls: [`https://www.instagram.com/${username}/`],
       resultsType: "posts",
-      resultsLimit: 3, // fetch enough then slice
+      resultsLimit: 6, // fetch enough then slice
       addParentData: false,
     } as const;
 
